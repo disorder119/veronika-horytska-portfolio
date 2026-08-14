@@ -712,7 +712,6 @@ class Component extends DCLogic {
       if (e.key === 'ArrowLeft') this.step(-1);
     };
     window.addEventListener('keydown', this.onKey);
-    this.loadTextures();
     try {
       const saved = localStorage.getItem('vvh-lang');
       if (saved && T[saved]) this.state.lang = saved;
