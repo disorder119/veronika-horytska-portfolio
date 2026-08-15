@@ -1,0 +1,564 @@
+{
+  "tanz": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Mehrere blau getönte Figuren in tänzerischer Bewegung vor schwarzem Grund, dazwischen helle, rundliche Flächen wie Monde oder Steine.",
+      "en": "Several blue-toned figures in dancer-like motion against a black ground, interspersed with pale, rounded forms like moons or stones.",
+      "uk": "Кілька фігур у синіх тонах у танцювальному русі на чорному тлі, між ними — світлі округлі форми, схожі на місяці чи каміння."
+    },
+    "alt": {
+      "de": "Gemälde „Tanz“ von Veronika Horytska: blau getönte Figuren in Bewegung vor schwarzem Grund",
+      "en": "\"Tanz\" (Dance) painting by Veronika Horytska: blue-toned figures in motion against a black ground",
+      "uk": "Картина «Танець» Вероніки Горицької: фігури синього кольору в русі на чорному тлі"
+    }
+  },
+  "der-weisse-schuh": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Eine helle, organisch geschwungene Form vor schwarzem Grund, in der sich Gewand und liegende Figur ineinander auflösen.",
+      "en": "A pale, organically curving form against a black ground, in which drapery and a reclining figure dissolve into one another.",
+      "uk": "Світла, органічно вигнута форма на чорному тлі, у якій драпірування і постать, що лежить, переходять одне в інше."
+    },
+    "alt": {
+      "de": "Gemälde „Der weiße Schuh“ von Veronika Horytska: helle abstrahierte Form vor schwarzem Grund",
+      "en": "\"Der weiße Schuh\" (The White Shoe) painting by Veronika Horytska: pale abstracted form against black",
+      "uk": "Картина «Der weiße Schuh» Вероніки Горицької: світла абстрактна форма на чорному тлі"
+    }
+  },
+  "schatten": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Eine helle, schattenhafte sitzende Figur mit lang gezogenen, spinnenartigen Fingern vor dunklem Grund.",
+      "en": "A pale, shadow-like seated figure with elongated, spidery fingers against a dark ground.",
+      "uk": "Світла, наче тінь, постать, що сидить, з видовженими, схожими на павучі лапки пальцями на темному тлі."
+    },
+    "alt": {
+      "de": "Gemälde „Schatten“ von Veronika Horytska: helle schattenhafte Figur vor dunklem Grund",
+      "en": "\"Schatten\" (Shadow) painting by Veronika Horytska: pale shadow-like seated figure",
+      "uk": "Картина «Тінь» Вероніки Горицької: світла постать-тінь на темному тлі"
+    }
+  },
+  "haubus": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Eine blau getönte Figur mit hellem, wehendem Kopfschmuck und weißem Gewand; ein dunkler Schuh liegt separat auf dem Stoff.",
+      "en": "A blue-toned figure with pale, wind-swept headwear and a white garment; a dark shoe rests separately on the fabric.",
+      "uk": "Постать у синіх тонах зі світлим, розвіяним головним убором і білим одягом; темний черевик лежить окремо на тканині."
+    },
+    "alt": {
+      "de": "Gemälde „Haubus“ von Veronika Horytska: blau getönte Figur mit weißem Gewand",
+      "en": "\"Haubus\" painting by Veronika Horytska: blue-toned figure in white drapery",
+      "uk": "Картина «Haubus» Вероніки Горицької: постать у синіх тонах у білому одязі"
+    }
+  },
+  "der-blaue-schuh": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Eine stark abstrahierte dunkle Form vor hellem Grund, aus der ein blau getöntes Gesicht und tastende Hände hervortreten.",
+      "en": "A strongly abstracted dark form against a pale ground, from which a blue-toned face and reaching hands emerge.",
+      "uk": "Сильно абстрагована темна форма на світлому тлі, з якої проступають обличчя синього тону і руки, що тягнуться."
+    },
+    "alt": {
+      "de": "Gemälde „Der blaue Schuh“ von Veronika Horytska: abstrahierte dunkle Form mit blauem Gesicht",
+      "en": "\"Der blaue Schuh\" (The Blue Shoe) painting by Veronika Horytska: abstracted dark form with a blue-toned face",
+      "uk": "Картина «Der blaue Schuh» Вероніки Горицької: абстрактна темна форма із синім обличчям"
+    }
+  },
+  "uims": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Eine blau getönte, kauernde Figur mit dunkler Kappe und weißem Gewand blickt konzentriert aus dem Bild.",
+      "en": "A blue-toned, crouching figure in a dark cap and white garment looks out of the painting with a focused gaze.",
+      "uk": "Постать у синіх тонах, що присіла, у темному капелюсі та білому вбранні, зосереджено дивиться з полотна."
+    },
+    "alt": {
+      "de": "Gemälde „Uims“ von Veronika Horytska: kauernde blau getönte Figur mit dunkler Kappe",
+      "en": "\"Uims\" painting by Veronika Horytska: crouching blue-toned figure in a dark cap",
+      "uk": "Картина «Uims» Вероніки Горицької: постать у синіх тонах у темному капелюсі"
+    }
+  },
+  "kopfbild-in-blau": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Ein blau getöntes Kopfbild im Profil, die Hand nah am Gesicht geführt.",
+      "en": "A blue-toned head study in profile, the hand held close to the face.",
+      "uk": "Погруддя в синіх тонах у профіль, рука наближена до обличчя."
+    },
+    "alt": {
+      "de": "Gemälde „Kopfbild in Blau“ von Veronika Horytska: Kopfstudie im Profil",
+      "en": "\"Kopfbild in Blau\" (Head in Blue) painting by Veronika Horytska: profile head study",
+      "uk": "Картина «Kopfbild in Blau» Вероніки Горицької: погруддя в профіль у синіх тонах"
+    }
+  },
+  "yak": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Ein helles, maskenhaftes Gesicht über der dunklen Gestalt eines Yaks vor schwarzem Grund.",
+      "en": "A pale, mask-like face above the dark form of a yak against a black ground.",
+      "uk": "Світле, схоже на маску обличчя над темною фігурою яка на чорному тлі."
+    },
+    "alt": {
+      "de": "Gemälde „Yak“ von Veronika Horytska: helles Gesicht über einem Yak",
+      "en": "\"Yak\" painting by Veronika Horytska: pale face above a yak",
+      "uk": "Картина «Yak» Вероніки Горицької: світле обличчя над яком"
+    }
+  },
+  "yak-ii": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "series": {"de": "Yak", "en": "Yak", "uk": "Як"},
+    "description": {
+      "de": "Eine kauernde menschliche Figur und ein Yak verschmelzen zu einer gemeinsamen, grau getönten Form.",
+      "en": "A crouching human figure and a yak merge into a single, grey-toned form.",
+      "uk": "Людська постать, що присіла, і як зливаються в одну спільну форму в сірих тонах."
+    },
+    "alt": {
+      "de": "Gemälde „Yak II“ von Veronika Horytska: Figur und Yak verschmelzen in Grautönen",
+      "en": "\"Yak II\" painting by Veronika Horytska: figure and yak merging in grey tones",
+      "uk": "Картина «Yak II» Вероніки Горицької: постать і як зливаються в сірих тонах"
+    }
+  },
+  "schrei": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Zwei schreiende Gesichter in Rot, sichtbar durch eine schwarze Aussparung wie hinter einer Maske.",
+      "en": "Two screaming faces in red, visible through a black cut-out as if behind a mask.",
+      "uk": "Два обличчя, що кричать, у червоному, видні крізь чорний виріз, наче з-за маски."
+    },
+    "alt": {
+      "de": "Gemälde „Schrei“ von Veronika Horytska: zwei schreiende Gesichter in Rot",
+      "en": "\"Schrei\" (Scream) painting by Veronika Horytska: two screaming faces in red",
+      "uk": "Картина «Schrei» (Крик) Вероніки Горицької: два обличчя, що кричать, у червоному"
+    }
+  },
+  "rot": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Eine liegende, ganz in Rot gehüllte Figur vor dunklem Grund, das Gesicht ruhig zur Seite gewandt.",
+      "en": "A reclining figure wrapped entirely in red against a dark ground, the face turned quietly to one side.",
+      "uk": "Постать, що лежить, повністю огорнута червоним на темному тлі, обличчя спокійно повернуте вбік."
+    },
+    "alt": {
+      "de": "Gemälde „Rot“ von Veronika Horytska: liegende Figur ganz in Rot",
+      "en": "\"Rot\" (Red) painting by Veronika Horytska: reclining figure wrapped in red",
+      "uk": "Картина «Rot» (Червоне) Вероніки Горицької: постать, огорнута червоним"
+    }
+  },
+  "dive": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Eine vornübergebeugte Figur in tauchender Bewegung; Arme und Beine gehen in eine langgezogene rotbraune Fläche über.",
+      "en": "A figure bent forward in a diving motion; arms and legs merge into an elongated, rust-red plane.",
+      "uk": "Постать, нахилена вперед у русі пірнання; руки й ноги переходять у видовжену іржаво-червону площину."
+    },
+    "alt": {
+      "de": "Gemälde „Dive“ von Veronika Horytska: vornübergebeugte Figur in tauchender Bewegung",
+      "en": "\"Dive\" painting by Veronika Horytska: figure bent forward in a diving motion",
+      "uk": "Картина «Dive» Вероніки Горицької: постать у русі пірнання"
+    }
+  },
+  "spiegel": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Zwei nahezu identische Gesichter, gerahmt von dreieckigen hellen Flächen, spiegeln sich in Schwarz-Weiß.",
+      "en": "Two nearly identical faces, framed by triangular pale planes, mirror each other in black and white.",
+      "uk": "Два майже однакові обличчя, обрамлені трикутними світлими площинами, дзеркально відображаються одне в одному в чорно-білому."
+    },
+    "alt": {
+      "de": "Gemälde „Spiegel“ von Veronika Horytska: zwei gespiegelte Gesichter in Schwarz-Weiß",
+      "en": "\"Spiegel\" (Mirror) painting by Veronika Horytska: two mirrored faces in black and white",
+      "uk": "Картина «Spiegel» (Дзеркало) Вероніки Горицької: два дзеркальні обличчя"
+    }
+  },
+  "river-in-the-middle-of-the-cave": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Zwei grau getönte Figuren in einer stillen, kargen Szene, eine mit erhobenem Bein in ruhiger Balance.",
+      "en": "Two grey-toned figures in a quiet, spare scene, one with a raised leg held in calm balance.",
+      "uk": "Дві постаті в сірих тонах у тихій, скупій сцені, одна з піднятою ногою в спокійній рівновазі."
+    },
+    "alt": {
+      "de": "Gemälde „River in the Middle of the Cave“ von Veronika Horytska: zwei grau getönte Figuren",
+      "en": "\"River in the Middle of the Cave\" painting by Veronika Horytska: two grey-toned figures",
+      "uk": "Картина «River in the Middle of the Cave» Вероніки Горицької: дві постаті в сірих тонах"
+    }
+  },
+  "kerzberg": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Eine vielfigurige, traumhafte Szene in Grautönen: ein dunkles Haus, eine Kerze, eine Gestalt am Tisch und mehrere kleinere Köpfe und Figuren.",
+      "en": "A dreamlike scene with many figures in grey tones: a dark house, a candle, a figure at a table, and several smaller heads and figures.",
+      "uk": "Багатофігурна, сновидна сцена в сірих тонах: темний будинок, свічка, постать за столом і кілька менших голів і фігур."
+    },
+    "alt": {
+      "de": "Gemälde „Kerzberg“ von Veronika Horytska: traumhafte vielfigurige Szene in Grautönen",
+      "en": "\"Kerzberg\" painting by Veronika Horytska: dreamlike multi-figure scene in grey tones",
+      "uk": "Картина «Kerzberg» Вероніки Горицької: багатофігурна сновидна сцена"
+    }
+  },
+  "the-shoemakers": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Mehrere blasse Gesichter dicht beieinander vor dunklem Grund, ihre Hände durch einen gemeinsamen weißen Faden verbunden.",
+      "en": "Several pale faces close together against a dark ground, their hands joined by a single white thread.",
+      "uk": "Кілька блідих облич, тісно згромаджених на темному тлі, їхні руки з'єднані спільною білою ниткою."
+    },
+    "alt": {
+      "de": "Gemälde „The Shoemakers“ von Veronika Horytska: Gesichter, durch einen weißen Faden verbunden",
+      "en": "\"The Shoemakers\" painting by Veronika Horytska: faces joined by a white thread",
+      "uk": "Картина «The Shoemakers» Вероніки Горицької: обличчя, з'єднані білою ниткою"
+    }
+  },
+  "group-portrait-of-monks": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Drei Gestalten in dunklen Gewändern mit breiten, flachen Kopfbedeckungen; eine helle Figur spricht mit ausgestreckter Hand.",
+      "en": "Three figures in dark robes with broad, flat headwear; a pale figure speaks with an outstretched hand.",
+      "uk": "Три постаті в темних одежах із широкими плоскими головними уборами; світла постать говорить із простягнутою рукою."
+    },
+    "alt": {
+      "de": "Gemälde „Group Portrait of Monks“ von Veronika Horytska: drei Gestalten in dunklen Gewändern",
+      "en": "\"Group Portrait of Monks\" painting by Veronika Horytska: three robed figures in dark clothing",
+      "uk": "Картина «Group Portrait of Monks» Вероніки Горицької: три постаті в темних одежах"
+    }
+  },
+  "liturgy": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Drei bleiche Gesichter unter einer gemeinsamen dunklen, breiten Kopfbedeckung vor tiefblauem Grund.",
+      "en": "Three pale faces beneath a shared, broad dark headpiece against a deep blue ground.",
+      "uk": "Три бліді обличчя під спільним широким темним головним убором на тлі глибокого синього кольору."
+    },
+    "alt": {
+      "de": "Gemälde „Liturgy“ von Veronika Horytska: drei Gesichter unter dunkler Kopfbedeckung",
+      "en": "\"Liturgy\" painting by Veronika Horytska: three faces beneath a shared dark headpiece",
+      "uk": "Картина «Liturgy» Вероніки Горицької: три обличчя під темним головним убором"
+    }
+  },
+  "die-jagd": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Zwei Gestalten mit ausladenden dunklen Kopfbedeckungen vor türkisem Grund; eine hält ein helles Bündel im Arm.",
+      "en": "Two figures with expansive dark headwear against a turquoise ground; one holds a pale bundle.",
+      "uk": "Дві постаті з широкими темними головними уборами на бірюзовому тлі; одна тримає світлий згорток."
+    },
+    "alt": {
+      "de": "Gemälde „Die Jagd“ von Veronika Horytska: zwei Gestalten vor türkisem Grund",
+      "en": "\"Die Jagd\" (The Hunt) painting by Veronika Horytska: two figures against a turquoise ground",
+      "uk": "Картина «Die Jagd» (Полювання) Вероніки Горицької: дві постаті на бірюзовому тлі"
+    }
+  },
+  "yak-rider": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Porträt einer Figur mit breiter dunkler Kopfbedeckung vor türkisem Grund, ein helles Hornmotiv in Brusthöhe.",
+      "en": "Portrait of a figure with broad dark headwear against a turquoise ground, a pale horn motif at chest height.",
+      "uk": "Портрет постаті з широким темним головним убором на бірюзовому тлі, світлий мотив рогу на рівні грудей."
+    },
+    "alt": {
+      "de": "Gemälde „Yak Rider“ von Veronika Horytska: Porträt vor türkisem Grund mit Hornmotiv",
+      "en": "\"Yak Rider\" painting by Veronika Horytska: portrait against turquoise with a horn motif",
+      "uk": "Картина «Yak Rider» Вероніки Горицької: портрет на бірюзовому тлі з мотивом рогу"
+    }
+  },
+  "warten": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Eine ruhige Porträtstudie in gedeckten Tönen, die Hand im stillen Gestus erhoben.",
+      "en": "A quiet portrait study in muted tones, the hand raised in a still gesture.",
+      "uk": "Тиха портретна студія в приглушених тонах, рука піднята в спокійному жесті."
+    },
+    "alt": {
+      "de": "Gemälde „Warten“ von Veronika Horytska: Porträtstudie in gedeckten Tönen",
+      "en": "\"Warten\" (Waiting) painting by Veronika Horytska: portrait study in muted tones",
+      "uk": "Картина «Warten» (Очікування) Вероніки Горицької: портретна студія"
+    }
+  },
+  "joel": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Porträt einer Figur mit bleichem Gesicht und dunkler Kleidung, in der Hand ein heller, stabartiger Gegenstand.",
+      "en": "Portrait of a figure with a pale face and dark clothing, holding a pale, stick-like object.",
+      "uk": "Портрет постаті з блідим обличчям і в темному одязі, у руці — світлий предмет, схожий на палицю."
+    },
+    "alt": {
+      "de": "Gemälde „Joel“ von Veronika Horytska: Porträt mit bleichem Gesicht",
+      "en": "\"Joel\" painting by Veronika Horytska: portrait with a pale face",
+      "uk": "Картина «Joel» Вероніки Горицької: портрет з блідим обличчям"
+    }
+  },
+  "selbstportraet": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Ein Selbstporträt der Künstlerin in dunkler Kapuze, der Blick direkt auf den Betrachter gerichtet.",
+      "en": "A self-portrait of the artist in a dark hood, the gaze directed straight at the viewer.",
+      "uk": "Автопортрет мисткині в темному каптурі, погляд спрямований прямо на глядача."
+    },
+    "alt": {
+      "de": "Selbstporträt von Veronika Horytska in dunkler Kapuze",
+      "en": "Self-portrait of Veronika Horytska in a dark hood",
+      "uk": "Автопортрет Вероніки Горицької в темному каптурі"
+    }
+  },
+  "holding-the-young-yak": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Drei Gestalten mit der wiederkehrenden breiten dunklen Kopfbedeckung in gedeckten Olivtönen, helle Bündel in den Händen.",
+      "en": "Three figures with the recurring broad dark headwear in muted olive tones, pale bundles in their hands.",
+      "uk": "Три постаті з повторюваним широким темним головним убором в приглушених оливкових тонах, світлі згортки в руках."
+    },
+    "alt": {
+      "de": "Gemälde „Holding the Young Yak“ von Veronika Horytska: drei Gestalten in Olivtönen",
+      "en": "\"Holding the Young Yak\" painting by Veronika Horytska: three figures in olive tones",
+      "uk": "Картина «Holding the Young Yak» Вероніки Горицької: три постаті в оливкових тонах"
+    }
+  },
+  "hermits": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Zwei goldgelb getönte Gesichter vor dunkelblauem Grund, daneben zwei dunkle, stabartige Formen.",
+      "en": "Two golden-yellow toned faces against a dark blue ground, beside two dark, stick-like forms.",
+      "uk": "Два обличчя в золотисто-жовтих тонах на темно-синьому тлі, поруч дві темні, схожі на палиці форми."
+    },
+    "alt": {
+      "de": "Gemälde „Hermits“ von Veronika Horytska: goldgelbe Gesichter vor dunkelblauem Grund",
+      "en": "\"Hermits\" painting by Veronika Horytska: golden-toned faces against dark blue",
+      "uk": "Картина «Hermits» Вероніки Горицької: золотисті обличчя на темно-синьому тлі"
+    }
+  },
+  "portrait-of-deacons": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "series": {"de": "Portrait of Deacons", "en": "Portrait of Deacons", "uk": "Portrait of Deacons"},
+    "description": {
+      "de": "Zwei bleiche, maskenhafte Gesichter in warmen Ocker- und Goldtönen, in einem historisierenden Bilderrahmen gezeigt.",
+      "en": "Two pale, mask-like faces in warm ochre and gold tones, shown within a historicising picture frame.",
+      "uk": "Два бліді, схожі на маски обличчя в теплих охристих і золотих тонах, показані в історизуючій рамі."
+    },
+    "alt": {
+      "de": "Gemälde „Portrait of Deacons“ von Veronika Horytska: zwei Gesichter in Ockertönen im Bilderrahmen",
+      "en": "\"Portrait of Deacons\" painting by Veronika Horytska: two faces in ochre tones within a frame",
+      "uk": "Картина «Portrait of Deacons» Вероніки Горицької: два обличчя в охристих тонах у рамі"
+    }
+  },
+  "paladins": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Drei eng verschränkte Figuren in warmen Ockertönen, eine Hand hält einen Faden zu einer maskenartigen Form.",
+      "en": "Three closely intertwined figures in warm ochre tones, one hand holding a thread leading to a mask-like form.",
+      "uk": "Три тісно переплетені постаті в теплих охристих тонах, одна рука тримає нитку до форми, схожої на маску."
+    },
+    "alt": {
+      "de": "Gemälde „Paladins“ von Veronika Horytska: verschränkte Figuren in Ockertönen",
+      "en": "\"Paladins\" painting by Veronika Horytska: intertwined figures in ochre tones",
+      "uk": "Картина «Paladins» Вероніки Горицької: переплетені постаті в охристих тонах"
+    }
+  },
+  "portrait-of-deacons-ii": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "series": {"de": "Portrait of Deacons", "en": "Portrait of Deacons", "uk": "Portrait of Deacons"},
+    "description": {
+      "de": "Zwei Gestalten mit breiten dunklen Kopfbedeckungen in warmem Licht, die Hände im Gespräch erhoben.",
+      "en": "Two figures with broad dark headwear in warm light, hands raised as if in conversation.",
+      "uk": "Дві постаті з широкими темними головними уборами в теплому світлі, руки підняті наче в розмові."
+    },
+    "alt": {
+      "de": "Gemälde „Portrait of Deacons II“ von Veronika Horytska: zwei Gestalten im Gespräch",
+      "en": "\"Portrait of Deacons II\" painting by Veronika Horytska: two figures in conversation",
+      "uk": "Картина «Portrait of Deacons II» Вероніки Горицької: дві постаті в розмові"
+    }
+  },
+  "study-of-the-head": {
+    "category": {"de": "Malerei", "en": "Painting", "uk": "Живопис"},
+    "description": {
+      "de": "Eine Kopfstudie in warmen Brauntönen im Profil, mit breiter dunkler Kopfbedeckung am Bildrand.",
+      "en": "A head study in warm brown tones in profile, with broad dark headwear at the edge of the frame.",
+      "uk": "Погруддя в теплих коричневих тонах у профіль, з широким темним головним убором на краю полотна."
+    },
+    "alt": {
+      "de": "Gemälde „Study of the Head“ von Veronika Horytska: Kopfstudie in Brauntönen",
+      "en": "\"Study of the Head\" painting by Veronika Horytska: head study in brown tones",
+      "uk": "Картина «Study of the Head» Вероніки Горицької: погруддя в коричневих тонах"
+    }
+  },
+  "leinenmantel": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Ein cremefarbener Leinenmantel mit handgezeichneten Figuren und Gefäßmotiven, hier mit dunkler Kappe getragen fotografiert.",
+      "en": "A cream-coloured linen coat with hand-drawn figures and vessel motifs, photographed here worn with a dark cap.",
+      "uk": "Пальто з кремового льону з намальованими вручну фігурами та мотивами посуду, тут сфотографоване в поєднанні з темним капелюхом."
+    },
+    "alt": {
+      "de": "Textilarbeit „Leinenmantel“ von Veronika Horytska: handbemalter Leinenmantel, getragen",
+      "en": "\"Leinenmantel\" (Linen Coat) textile work by Veronika Horytska, worn",
+      "uk": "Текстильна робота «Leinenmantel» Вероніки Горицької: розписане вручну лляне пальто"
+    }
+  },
+  "weste-und-schuerze": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Eine schwarze, transparente Weste mit hellen, knochenartigen Applikationen, getragen mit Gehstock und heller Kappe.",
+      "en": "A black, sheer vest with pale, bone-like appliqués, worn with a walking cane and a pale cap.",
+      "uk": "Чорний прозорий жилет зі світлими аплікаціями, схожими на кістки, вдягнений із ціпком і світлим капелюхом."
+    },
+    "alt": {
+      "de": "Textilarbeit „Weste und Schürze“ von Veronika Horytska, getragen mit Gehstock",
+      "en": "\"Weste und Schürze\" (Vest and Apron) textile work by Veronika Horytska, worn with a cane",
+      "uk": "Текстильна робота «Weste und Schürze» Вероніки Горицької, з ціпком"
+    }
+  },
+  "dyki-bizony": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Ein cremefarbener Mantel mit gedruckten Bisonmotiven, dazu ein bedruckter Hut und ein Rock aus Spitze, mit Gehstock fotografiert.",
+      "en": "A cream-coloured coat with printed bison motifs, paired with a printed hat and a lace underskirt, photographed with a cane.",
+      "uk": "Кремове пальто з друкованими мотивами бізонів, у поєднанні з капелюхом і мереживною спідницею, сфотографоване з ціпком."
+    },
+    "alt": {
+      "de": "Textilarbeit „Dyki Bizony“ von Veronika Horytska: Mantel mit Bisonmotiven",
+      "en": "\"Dyki Bizony\" (Wild Bison) textile work by Veronika Horytska: coat with bison motifs",
+      "uk": "Текстильна робота «Дикі бізони» Вероніки Горицької: пальто з мотивами бізонів"
+    }
+  },
+  "pipes": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Ein schwarzer Mantel über heller, handbestickter Weste, dunkle Kappe, schwarzer Faltenrock mit ausgefranstem Saum.",
+      "en": "A black coat over a pale, hand-embroidered vest, a dark cap, and a black pleated skirt with a frayed hem.",
+      "uk": "Чорне пальто поверх світлого, вишитого вручну жилета, темний капелюх і чорна плісована спідниця з обтріпаним краєм."
+    },
+    "alt": {
+      "de": "Textilarbeit „Pipes“ von Veronika Horytska: Mantel über bestickter Weste",
+      "en": "\"Pipes\" textile work by Veronika Horytska: coat over an embroidered vest",
+      "uk": "Текстильна робота «Pipes» Вероніки Горицької: пальто поверх вишитого жилета"
+    }
+  },
+  "vershnyky": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Ein heller Leinenmantel mit handgezeichneten Reiterfiguren und Kalligrafie entlang der Knopfleiste.",
+      "en": "A pale linen coat with hand-drawn horseman figures and calligraphy running along the button placket.",
+      "uk": "Світле лляне пальто з намальованими вручну постатями вершників і каліграфією вздовж застібки."
+    },
+    "alt": {
+      "de": "Textilarbeit „Vershnyky“ von Veronika Horytska: Leinenmantel mit Reiterfiguren",
+      "en": "\"Vershnyky\" (Horsemen) textile work by Veronika Horytska: linen coat with horseman figures",
+      "uk": "Текстильна робота «Вершники» Вероніки Горицької: лляне пальто з постатями вершників"
+    }
+  },
+  "skythisches-gold": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Ein schwarzer Mantel mit silbern glänzendem, mondsichelförmigem Schmuckapplikat, mit Gehstock und dunkler Kappe getragen.",
+      "en": "A black coat with a silvery, crescent-shaped jewellery appliqué, worn with a walking cane and a dark cap.",
+      "uk": "Чорне пальто зі сріблястою аплікацією у формі місяця, вдягнене з ціпком і темним капелюхом."
+    },
+    "alt": {
+      "de": "Textilarbeit „Skythisches Gold“ von Veronika Horytska: Mantel mit Schmuckapplikation",
+      "en": "\"Skythisches Gold\" (Scythian Gold) textile work by Veronika Horytska: coat with jewellery appliqué",
+      "uk": "Текстильна робота «Скіфське золото» Вероніки Горицької: пальто з прикрасою-аплікацією"
+    }
+  },
+  "strilez-hut": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Eine kleine helle Leinenkappe mit handgezeichneter Schützenfigur und einer Reihe kleiner Knöpfe.",
+      "en": "A small pale linen cap with a hand-drawn archer figure and a row of small buttons.",
+      "uk": "Невеликий світлий лляний капелюх із намальованою вручну постаттю стрільця і рядом ґудзиків."
+    },
+    "alt": {
+      "de": "Textilarbeit „Strilez · Hut“ von Veronika Horytska: Leinenkappe mit Schützenfigur",
+      "en": "\"Strilez · Hut\" textile work by Veronika Horytska: linen cap with an archer figure",
+      "uk": "Текстильна робота «Стрілець» Вероніки Горицької: лляний капелюх з постаттю стрільця"
+    }
+  },
+  "kopfbedeckung-aus-leder": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Eine kleine braune Lederkappe mit eingesetztem Stoffbild einer architektonischen Illustration.",
+      "en": "A small brown leather cap with an inset fabric panel showing an architectural illustration.",
+      "uk": "Невеликий коричневий шкіряний капелюх зі вшитою тканинною вставкою з архітектурною ілюстрацією."
+    },
+    "alt": {
+      "de": "Textilarbeit „Kopfbedeckung aus Leder“ von Veronika Horytska mit Stoffbild",
+      "en": "\"Kopfbedeckung aus Leder\" (Leather Headwear) textile work by Veronika Horytska with a fabric panel",
+      "uk": "Текстильна робота «Шкіряний головний убір» Вероніки Горицької з тканинною вставкою"
+    }
+  },
+  "trypillische-madonnen": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Ein grauer Wollrock mit eingesetztem Stoffbild, das eine Figur und ein Tier in volkstümlicher Zeichenweise zeigt, dazu handschriftlicher Text.",
+      "en": "A grey wool skirt with an inset fabric panel showing a figure and an animal in a folk-art drawing style, alongside handwritten text.",
+      "uk": "Сіра вовняна спідниця зі вшитою тканинною вставкою, на якій зображені постать і тварина в народному малярському стилі, поруч рукописний текст."
+    },
+    "alt": {
+      "de": "Textilarbeit „Trypillische Madonnen“ von Veronika Horytska mit volkstümlicher Zeichnung",
+      "en": "\"Trypillische Madonnen\" (Trypillian Madonnas) textile work by Veronika Horytska with folk-art drawing",
+      "uk": "Текстильна робота «Трипільські мадонни» Вероніки Горицької з народним малюнком"
+    }
+  },
+  "weste-aus-reinem-kaschmir": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Eine schwarze Kaschmirweste mit hellem Innenfutter, darauf eine Bisonzeichnung und handschriftlicher ukrainischer Text.",
+      "en": "A black cashmere vest with a pale inner lining bearing a bison drawing and handwritten Ukrainian text.",
+      "uk": "Чорний кашеміровий жилет зі світлою підкладкою, на якій — малюнок бізона і рукописний український текст."
+    },
+    "alt": {
+      "de": "Textilarbeit „Weste aus reinem Kaschmir“ von Veronika Horytska mit Bisonzeichnung",
+      "en": "\"Weste aus reinem Kaschmir\" (Pure Cashmere Vest) textile work by Veronika Horytska with a bison drawing",
+      "uk": "Текстильна робота «Жилет з чистого кашеміру» Вероніки Горицької з малюнком бізона"
+    }
+  },
+  "dem-tier-auf-der-spur": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Ein helles Leinenhemd mit handgezeichnetem Bison und einer Figur mit Stab entlang der Knopfleiste.",
+      "en": "A pale linen shirt with a hand-drawn bison and a staff-bearing figure along the button placket.",
+      "uk": "Світла лляна сорочка з намальованими вручну бізоном і постаттю з палицею вздовж застібки."
+    },
+    "alt": {
+      "de": "Textilarbeit „Dem Tier auf der Spur“ von Veronika Horytska: Leinenhemd mit Bisonzeichnung",
+      "en": "\"Dem Tier auf der Spur\" (Tracking the Animal) textile work by Veronika Horytska: linen shirt with bison drawing",
+      "uk": "Текстильна робота «Переслідуючи звіра» Вероніки Горицької: лляна сорочка з малюнком бізона"
+    }
+  },
+  "bronzezeit": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Eine spitz zulaufende, gehörnte schwarze Kopfbedeckung mit hellen Steinapplikationen, dazu ein Mantel mit heller Zeichnung und Knopfreihe.",
+      "en": "A tapering, horned black headpiece with pale stone appliqués, paired with a coat bearing a pale drawing and a row of buttons.",
+      "uk": "Загострений, рогатий чорний головний убір зі світлими кам'яними аплікаціями, у поєднанні з пальто зі світлим малюнком і рядом ґудзиків."
+    },
+    "alt": {
+      "de": "Textilarbeit „Bronzezeit“ von Veronika Horytska: gehörnte schwarze Kopfbedeckung",
+      "en": "\"Bronzezeit\" (Bronze Age) textile work by Veronika Horytska: horned black headpiece",
+      "uk": "Текстильна робота «Бронзова доба» Вероніки Горицької: рогатий чорний головний убір"
+    }
+  },
+  "pidsvichnyk-kerzenhalter": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Eine hohe, hutförmige Leinenkapuze mit handgezeichneten Vogel- und Tiermotiven und der Signatur „VVH“, dazu eine passend bestickte Jacke.",
+      "en": "A tall, hat-shaped linen hood with hand-drawn bird and animal motifs and the \"VVH\" signature, paired with a matching embroidered jacket.",
+      "uk": "Високий, схожий на капелюх лляний каптур з намальованими вручну мотивами птахів і тварин та підписом «VVH», у парі з вишитою курткою."
+    },
+    "alt": {
+      "de": "Textilarbeit „Pidsvichnyk / Kerzenhalter“ von Veronika Horytska mit Vogel- und Tiermotiven",
+      "en": "\"Pidsvichnyk / Kerzenhalter\" (Candlestick) textile work by Veronika Horytska with bird and animal motifs",
+      "uk": "Текстильна робота «Підсвічник» Вероніки Горицької з мотивами птахів і тварин"
+    }
+  },
+  "handgenaehte-kopfbedeckungen": {
+    "category": {"de": "Textilkunst", "en": "Textile Art", "uk": "Текстильне мистецтво"},
+    "description": {
+      "de": "Eine dunkle Lederkappe mit rundem, knaufartigem Aufsatz, getragen zu einem hochgeschlossenen Gewand mit Knopfleiste.",
+      "en": "A dark leather cap with a round, knob-like top, worn with a high-collared garment fastened with buttons.",
+      "uk": "Темний шкіряний капелюх з круглим верхом на кшталт ґудзика, вдягнений з одягом із високим коміром на ґудзиках."
+    },
+    "alt": {
+      "de": "Textilarbeit „Handgenähte Kopfbedeckungen“ von Veronika Horytska: Lederkappe",
+      "en": "\"Handgenähte Kopfbedeckungen\" (Hand-sewn Headwear) textile work by Veronika Horytska: leather cap",
+      "uk": "Текстильна робота «Головні убори ручного шиття» Вероніки Горицької: шкіряний капелюх"
+    }
+  }
+}
