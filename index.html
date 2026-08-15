@@ -40,8 +40,8 @@ a,button{-webkit-tap-highlight-color:transparent}
 ::selection{background:#8c491a;color:#fff}
 :focus-visible{outline:2px solid #d67f48;outline-offset:3px;border-radius:8px}
 @keyframes vvhPaint{from{-webkit-mask-position:118% 0;mask-position:118% 0;opacity:.2}to{-webkit-mask-position:0% 0;mask-position:0% 0;opacity:1}}
-@keyframes vvhEmerge{from{opacity:0;filter:brightness(.25) blur(7px);transform:scale(1.06)}to{opacity:1;filter:brightness(1) blur(0);transform:scale(1)}}
-@keyframes vvhHang{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes vvhEmerge{from{opacity:0;filter:brightness(.25) blur(7px)}to{opacity:1;filter:brightness(1) blur(0)}}
+@keyframes vvhHang{from{opacity:0}to{opacity:1}}
 @keyframes vvhSway{0%{transform:rotate(-1.4deg)}100%{transform:rotate(1.4deg)}}
 @keyframes vvhDraw{to{stroke-dashoffset:0}}
 @keyframes vvhFade{from{opacity:0}to{opacity:1}}
@@ -85,7 +85,13 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
       <span aria-hidden="true" style="align-self:center;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid rgba(214,127,72,.5);transform:rotate(45deg);border-radius:7px"><span style="transform:rotate(-45deg);font-family:'IM Fell English',serif;font-size:16px;letter-spacing:.06em;color:rgba(214,127,72,.95)">I</span></span>
       <h2 data-i18n="roomAcryl" style="margin:0;font-family:'IM Fell English','EB Garamond',Georgia,serif;font-weight:400;font-size:clamp(38px,10vw,74px);line-height:.9;letter-spacing:.01em">Acryl</h2>
       <span data-count="acryl" style="align-self:center;font-size:12px;letter-spacing:.2em;color:#82796a"></span>
-      <button data-effect="acryl" onClick="{{ toggleAcryl }}" data-i18n="hintAcryl" style="white-space:nowrap;align-self:center;margin-left:auto;padding:8px 2px;border:0;background:transparent;font-family:inherit;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#82796a;cursor:pointer;border-bottom:1px solid rgba(130,121,106,.4)" style-hover="color:#c9bfb0;border-color:rgba(201,191,176,.7)">mit dem Finger malen</button>
+      <span style="display:flex;align-items:center;gap:14px;align-self:center;margin-left:auto">
+        <button data-effect="acryl" onClick="{{ toggleAcryl }}" data-i18n="hintAcryl" style="white-space:nowrap;padding:8px 2px;border:0;background:transparent;font-family:inherit;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#82796a;cursor:pointer;border-bottom:1px solid rgba(130,121,106,.4)" style-hover="color:#c9bfb0;border-color:rgba(201,191,176,.7)">mit dem Finger malen</button>
+        <button data-tool="acryl" onClick="{{ toggleAcryl }}" title="Effekt anhalten" aria-label="Effekt anhalten" style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid rgba(236,229,216,.16);border-radius:999px;background:transparent;cursor:pointer" style-hover="border-color:rgba(179,161,124,.7);background:rgba(179,161,124,.08)">
+          <svg ref="{{ knifeRef }}" viewBox="0 0 24 24" aria-hidden="true" style="width:19px;height:19px;transform-origin:76% 24%"><g fill="none" stroke="#b3a17c" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 3.4 L15.7 8.3"></path><path d="M14.9 7.5 L16.5 9.1 L7.4 18.2 C 6.4 19.2, 4.8 19.2, 3.8 18.2 C 2.8 17.2, 2.8 15.6, 3.8 14.6 Z"></path><path d="M6.2 16 L11.9 10.4"></path></g></svg>
+          <svg data-strike="1" viewBox="0 0 44 44" aria-hidden="true" opacity="0" style="position:absolute;left:0;top:0;width:44px;height:44px;pointer-events:none"><path d="M9.5 34.5 L34.5 9.5" fill="none" stroke="#0d0b09" stroke-width="4.8" stroke-linecap="round"></path><path d="M9.5 34.5 L34.5 9.5" fill="none" stroke="#b3a17c" stroke-width="1.7" stroke-linecap="round"></path></svg>
+        </button>
+      </span>
     </div>
     <svg viewBox="0 0 600 8" preserveAspectRatio="none" aria-hidden="true" style="width:100%;height:8px;margin:0 0 18px;overflow:visible"><path d="M0 2 H600" stroke="rgba(236,229,216,.2)" stroke-width="1" fill="none"></path><path d="M0 6.5 H600" stroke="rgba(236,229,216,.09)" stroke-width="1" fill="none"></path></svg>
     <p data-i18n="introAcryl" data-dropcap="1" style="max-width:46ch;margin:0 0 30px;font-size:15px;font-weight:400;line-height:1.65;color:#a19786;text-wrap:pretty">Acrylarbeiten als erster Raum: Körper, Fläche und Blick treten in direkten Kontakt.</p>
@@ -93,7 +99,7 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
       <sc-for list="{{ acryl }}" as="w" hint-placeholder-count="6">
         <button data-reveal="acryl" onClick="{{ w.open }}" style="display:flex;flex-direction:column;gap:12px;padding:0;border:0;background:transparent;text-align:left;cursor:pointer">
           <div style="position:relative;aspect-ratio:1/1.12;border-radius:20px;overflow:hidden;background:#000;border:1px solid rgba(236,229,216,.1)">
-            <img src="{{ w.img }}" alt="{{ w.title }}" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:7px;transition:transform .9s cubic-bezier(.2,.8,.2,1)">
+            <img src="{{ w.img }}" alt="{{ w.title }}" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:7px;transition:filter .5s ease">
             <sc-if value="{{ w.sold }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:10px;top:10px;padding:5px 11px;border-radius:999px;background:rgba(140,73,26,.92);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#ffe1d0">{{ w.soldLabel }}</span></sc-if>
           </div>
           <div style="display:flex;flex-direction:column;gap:4px">
@@ -113,7 +119,13 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
       <span aria-hidden="true" style="align-self:center;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid rgba(214,127,72,.5);transform:rotate(45deg);border-radius:7px"><span style="transform:rotate(-45deg);font-family:'IM Fell English',serif;font-size:16px;letter-spacing:.06em;color:rgba(214,127,72,.95)">II</span></span>
       <h2 data-i18n="roomOil" style="margin:0;font-family:'IM Fell English','EB Garamond',Georgia,serif;font-weight:400;font-size:clamp(38px,10vw,74px);line-height:.9;letter-spacing:.01em">Öl</h2>
       <span data-count="oel" style="align-self:center;font-size:12px;letter-spacing:.2em;color:#82796a"></span>
-      <button data-effect="oel" onClick="{{ toggleOil }}" data-i18n="hintOil" style="white-space:nowrap;align-self:center;margin-left:auto;padding:8px 2px;border:0;background:transparent;font-family:inherit;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#82796a;cursor:pointer;border-bottom:1px solid rgba(130,121,106,.4)" style-hover="color:#c9bfb0;border-color:rgba(201,191,176,.7)">Kerzenlicht führen</button>
+      <span style="display:flex;align-items:center;gap:14px;align-self:center;margin-left:auto">
+        <button data-effect="oel" onClick="{{ toggleOil }}" data-i18n="hintOil" style="white-space:nowrap;padding:8px 2px;border:0;background:transparent;font-family:inherit;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#82796a;cursor:pointer;border-bottom:1px solid rgba(130,121,106,.4)" style-hover="color:#c9bfb0;border-color:rgba(201,191,176,.7)">Kerzenlicht führen</button>
+        <button data-tool="oel" onClick="{{ toggleOil }}" title="Effekt anhalten" aria-label="Effekt anhalten" style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid rgba(236,229,216,.16);border-radius:999px;background:transparent;cursor:pointer" style-hover="border-color:rgba(179,161,124,.7);background:rgba(179,161,124,.08)">
+          <svg viewBox="0 0 24 24" aria-hidden="true" style="width:19px;height:19px"><g fill="none" stroke="#b3a17c" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9.4 20.4 h5.2 v-9.1 h-5.2 z"></path><path d="M9.4 13.4 h5.2"></path><path d="M12 11.3 v-1.5"></path><path ref="{{ flameRef }}" d="M12 9.6 C 10.3 8.4, 10.1 6.6, 12 4.1 C 13.9 6.6, 13.7 8.4, 12 9.6 Z" fill="rgba(226,170,104,.5)" style="transform-origin:12px 9.6px"></path></g></svg>
+          <svg data-strike="1" viewBox="0 0 44 44" aria-hidden="true" opacity="0" style="position:absolute;left:0;top:0;width:44px;height:44px;pointer-events:none"><path d="M9.5 34.5 L34.5 9.5" fill="none" stroke="#0d0b09" stroke-width="4.8" stroke-linecap="round"></path><path d="M9.5 34.5 L34.5 9.5" fill="none" stroke="#b3a17c" stroke-width="1.7" stroke-linecap="round"></path></svg>
+        </button>
+      </span>
     </div>
     <svg viewBox="0 0 600 8" preserveAspectRatio="none" aria-hidden="true" style="width:100%;height:8px;margin:0 0 18px;overflow:visible"><path d="M0 2 H600" stroke="rgba(236,229,216,.2)" stroke-width="1" fill="none"></path><path d="M0 6.5 H600" stroke="rgba(236,229,216,.09)" stroke-width="1" fill="none"></path></svg>
     <p data-i18n="introOil" data-dropcap="1" style="max-width:46ch;margin:0 0 30px;font-size:15px;font-weight:400;line-height:1.65;color:#a19786;text-wrap:pretty">Ölmalerei als verdichteter Bildraum: dunkle Szenen, Körper und Erinnerung werden langsamer lesbar.</p>
@@ -121,7 +133,7 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
       <sc-for list="{{ oil }}" as="w" hint-placeholder-count="6">
         <button data-reveal="oil" onClick="{{ w.open }}" style="display:flex;flex-direction:column;gap:12px;padding:0;border:0;background:transparent;text-align:left;cursor:pointer">
           <div style="position:relative;aspect-ratio:1/1.12;border-radius:20px;overflow:hidden;background:#000;border:1px solid rgba(236,229,216,.1)">
-            <img src="{{ w.img }}" alt="{{ w.title }}" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:7px;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)">
+            <img src="{{ w.img }}" alt="{{ w.title }}" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:7px;transition:filter .7s ease">
             <sc-if value="{{ w.sold }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:10px;top:10px;padding:5px 11px;border-radius:999px;background:rgba(140,73,26,.92);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#ffe1d0">{{ w.soldLabel }}</span></sc-if>
           </div>
           <div style="display:flex;flex-direction:column;gap:4px">
@@ -172,8 +184,9 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
       <span data-count="textil" style="align-self:center;font-size:12px;letter-spacing:.2em;color:#82796a"></span>
       <span style="display:flex;align-items:center;gap:14px;align-self:center;margin-left:auto">
         <button data-effect="textil" onClick="{{ toggleTex }}" data-i18n="hintTextile" style="white-space:nowrap;padding:8px 2px;border:0;background:transparent;font-family:inherit;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#82796a;cursor:pointer;border-bottom:1px solid rgba(130,121,106,.4)" style-hover="color:#c9bfb0;border-color:rgba(201,191,176,.7)">mit dem Finger nähen</button>
-        <button data-scissors="1" onClick="{{ snip }}" data-i18n-title="cut" title="Faden abschneiden" aria-label="Faden abschneiden" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid rgba(236,229,216,.16);border-radius:999px;background:transparent;cursor:pointer" style-hover="border-color:rgba(179,161,124,.7);background:rgba(179,161,124,.08)">
+        <button data-tool="textil" data-scissors="1" onClick="{{ toggleTex }}" title="Effekt anhalten" aria-label="Effekt anhalten" style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid rgba(236,229,216,.16);border-radius:999px;background:transparent;cursor:pointer" style-hover="border-color:rgba(179,161,124,.7);background:rgba(179,161,124,.08)">
           <svg ref="{{ scissorsRef }}" viewBox="0 0 24 24" aria-hidden="true" style="width:19px;height:19px;transform-origin:20% 50%"><g fill="none" stroke="#b3a17c" stroke-width="1.3" stroke-linecap="round"><circle cx="5.2" cy="17.6" r="2.6"></circle><circle cx="5.2" cy="6.4" r="2.6"></circle><path d="M7.5 16.3 L20.5 5.2"></path><path d="M7.5 7.7 L20.5 18.8"></path><path d="M12 12 L14.4 10"></path></g></svg>
+          <svg data-strike="1" viewBox="0 0 44 44" aria-hidden="true" opacity="0" style="position:absolute;left:0;top:0;width:44px;height:44px;pointer-events:none"><path d="M9.5 34.5 L34.5 9.5" fill="none" stroke="#0d0b09" stroke-width="4.8" stroke-linecap="round"></path><path d="M9.5 34.5 L34.5 9.5" fill="none" stroke="#b3a17c" stroke-width="1.7" stroke-linecap="round"></path></svg>
         </button>
       </span>
     </div>
@@ -183,7 +196,7 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
       <sc-for list="{{ textile }}" as="w" hint-placeholder-count="6">
         <button data-reveal="textile" data-tex-card="1" onClick="{{ w.open }}" style="position:relative;display:flex;flex-direction:column;gap:12px;padding:0;border:0;background:transparent;text-align:left;cursor:pointer">
           <div style="position:relative;aspect-ratio:1/1.12;border-radius:20px;overflow:hidden;background:#000;border:1px solid rgba(236,229,216,.09)">
-            <img src="{{ w.img }}" alt="{{ w.title }}" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:7px;transition:transform .9s cubic-bezier(.2,.8,.2,1)">
+            <img src="{{ w.img }}" alt="{{ w.title }}" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:7px;transition:filter .5s ease">
             <sc-if value="{{ w.sold }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:10px;top:10px;padding:5px 11px;border-radius:999px;background:rgba(140,73,26,.92);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#ffe1d0">{{ w.soldLabel }}</span></sc-if>
           </div>
           <div style="display:flex;flex-direction:column;gap:4px">
@@ -268,9 +281,23 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
       </div>
     </div>
     <div style="flex:1;width:100%;max-width:1000px;margin:0 auto;padding:0 16px 60px;display:flex;flex-direction:column;gap:22px">
-      <div ref="{{ detailImgWrapRef }}" style="border:1px solid rgba(236,229,216,.12);border-radius:26px;background:#000;padding:10px;display:flex;align-items:center;justify-content:center;min-height:44vh">
-        <sc-if value="{{ hasImg }}" hint-placeholder-val="{{ false }}"><img src="{{ cur.img }}" alt="{{ cur.title }}" style="max-width:100%;max-height:66vh;display:block;border-radius:18px"></sc-if>
+      <div ref="{{ detailImgWrapRef }}" style="position:relative;border:1px solid rgba(236,229,216,.12);border-radius:26px;background:#000;padding:10px;display:flex;align-items:center;justify-content:center;min-height:44vh;touch-action:pan-y">
+        <sc-if value="{{ hasImg }}" hint-placeholder-val="{{ false }}"><img ref="{{ detailImgRef }}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="{{ cur.title }}" style="max-width:100%;max-height:66vh;display:block;border-radius:18px"></sc-if>
+        <div ref="{{ loupeRef }}" aria-hidden="true" style="position:absolute;left:0;top:0;width:92px;height:92px;margin:-46px 0 0 -46px;pointer-events:none;opacity:0;transition:opacity .22s ease;z-index:5;will-change:transform">
+          <div ref="{{ lensRef }}" style="position:absolute;inset:0;border-radius:50%;background-repeat:no-repeat;background-color:#0b0906;box-shadow:0 10px 22px rgba(0,0,0,.62),inset 0 0 16px rgba(0,0,0,.5)"></div>
+          <div style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(54% 48% at 32% 26%,rgba(255,248,232,.16) 0%,rgba(0,0,0,0) 62%)"></div>
+          <svg viewBox="0 0 120 120" aria-hidden="true" style="position:absolute;left:-14px;top:-14px;width:120px;height:120px;overflow:visible">
+            <g fill="none" stroke="#b3a17c" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M95 95 L117 117" stroke-width="3.4" opacity=".9"></path>
+              <path d="M89.4 89.4 L93.6 93.6" stroke-width="5.2" opacity=".85"></path>
+              <path d="M116 116 L119.4 119.4" stroke-width="5.6" opacity=".9"></path>
+              <circle cx="60" cy="60" r="47" stroke-width="1.6"></circle>
+              <circle cx="60" cy="60" r="44.4" stroke-width="0.8" opacity=".5"></circle>
+            </g>
+          </svg>
+        </div>
       </div>
+      <span data-i18n="loupeHint" style="align-self:center;margin-top:-12px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#82796a">Lupe über das Bild führen</span>
       <div style="display:flex;flex-direction:column;gap:12px">
         <span style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#d67f48">{{ cur.roomLabel }}</span>
         <h2 style="margin:0;font-family:'IM Fell English','EB Garamond',Georgia,serif;font-weight:400;font-size:clamp(30px,7vw,52px);line-height:.98;letter-spacing:.01em">{{ cur.title }}</h2>
@@ -294,7 +321,7 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;paintIntensity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.119,&quot;min&quot;:0.05,&quot;max&quot;:2,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Animation&quot;},&quot;varnish&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.86,&quot;min&quot;:0.2,&quot;max&quot;:1,&quot;step&quot;:0.02,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Animation&quot;},&quot;threadColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#b3a17c&quot;,&quot;options&quot;:[&quot;#b3a17c&quot;,&quot;#8d7f5e&quot;,&quot;#9c6248&quot;,&quot;#9aab77&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Animation&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;transition&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;aus&quot;,&quot;überblenden&quot;,&quot;licht&quot;,&quot;werke&quot;],&quot;default&quot;:&quot;aus&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Raumwechsel&quot;}}">
 const T = {
   de: {brand:'Veronika Horytska', heroKicker:'Portfolio 2023 – 2026',
     heroSub:'Malerei, Textil und Objekt. Drei Räume, jeder mit eigenem Material und eigener Bewegung.',
@@ -304,7 +331,7 @@ const T = {
     introAcryl:'Acrylarbeiten als erster Raum: Körper, Fläche und Blick treten in direkten Kontakt.',
     introOil:'Ölmalerei als verdichteter Bildraum: dunkle Szenen, Körper und Erinnerung werden langsamer lesbar.',
     introTextile:'Textile Arbeiten erscheinen als Bildträger, Körperhüllen und Objekte mit Spuren von Hand, Material und Gebrauch.',
-    contact:'Kontakt', navStart:'Start', close:'Galerie', priceLabel:'Preis', statusLabel:'Status', cut:'Faden abschneiden',
+    contact:'Kontakt', navStart:'Start', close:'Galerie', priceLabel:'Preis', statusLabel:'Status', cut:'Faden abschneiden', wipe:'Farbe abziehen', flare:'Docht schneiden', loupeHint:'Lupe über das Bild führen',
     works:'Werke', back:'Zurück', imprint:'Impressum', privacy:'Datenschutz', settings:'Einstellungen',
     effectOff:'Effekt aus', effectStop:'Effekt anhalten', effectOn:'Effekt einschalten',
     consentBody:'Diese Seite lädt Schriften von Google Fonts. Dabei wird Ihre IP-Adresse an Google übertragen. Es werden keine Cookies zu Analyse- oder Werbezwecken gesetzt.',
@@ -324,7 +351,7 @@ const T = {
     introAcryl:'Acrylic works as the first room: body, surface and gaze come into direct contact.',
     introOil:'Oil painting as a condensed pictorial space: dark scenes, bodies and memory become legible more slowly.',
     introTextile:'Textile works appear as image carriers, body coverings and objects marked by hand, material and use.',
-    contact:'Contact', navStart:'Start', close:'Gallery', priceLabel:'Price', statusLabel:'Status', cut:'Cut the thread',
+    contact:'Contact', navStart:'Start', close:'Gallery', priceLabel:'Price', statusLabel:'Status', cut:'Cut the thread', wipe:'Scrape the paint off', flare:'Trim the wick', loupeHint:'move the loupe across the work',
     works:'works', back:'Back', imprint:'Imprint', privacy:'Privacy', settings:'Settings',
     effectOff:'effect off', effectStop:'Stop the effect', effectOn:'Turn the effect on',
     consentBody:'This site can load typefaces from Google Fonts, which transmits your IP address to Google. No analytics or advertising cookies are set.',
@@ -344,7 +371,7 @@ const T = {
     introAcryl:'Акрилові роботи як перша зала: тіло, площина і погляд вступають у прямий контакт.',
     introOil:'Олійний живопис як згущений простір зображення: темні сцени, тіла й пам’ять читаються повільніше.',
     introTextile:'Текстильні роботи постають як носії зображення, оболонки тіла та об’єкти зі слідами руки, матеріалу й ужитку.',
-    contact:'Контакти', navStart:'Початок', close:'Галерея', priceLabel:'Ціна', statusLabel:'Статус', cut:'Обрізати нитку',
+    contact:'Контакти', navStart:'Початок', close:'Галерея', priceLabel:'Ціна', statusLabel:'Статус', cut:'Обрізати нитку', wipe:'Зняти фарбу', flare:'Підрізати гніт', loupeHint:'проведіть лупою по роботі',
     works:'робіт', back:'Назад', imprint:'Вихідні дані', privacy:'Конфіденційність', settings:'Налаштування',
     effectOff:'ефект вимкнено', effectStop:'Вимкнути ефект', effectOn:'Увімкнути ефект',
     consentBody:'Сайт може завантажувати шрифти з Google Fonts, при цьому ваша IP-адреса передається до Google. Аналітичні та рекламні файли cookie не використовуються.',
@@ -376,8 +403,13 @@ class Component extends DCLogic {
   texCanvasRef = React.createRef();
   needleRef = React.createRef();
   scissorsRef = React.createRef();
+  knifeRef = React.createRef();
+  flameRef = React.createRef();
   overlayRef = React.createRef();
   detailImgWrapRef = React.createRef();
+  loupeRef = React.createRef();
+  detailImgRef = React.createRef();
+  lensRef = React.createRef();
   transRef = React.createRef();
   page = 'acryl';
   cleanups = [];
@@ -521,17 +553,56 @@ class Component extends DCLogic {
     };
     return de[kind] || de.imprint;
   }
-  clearRoom(room) {
-    if (room === 'acryl' && this.acrylCanvasRef.current) {
-      const cv = this.acrylCanvasRef.current, c = cv.getContext('2d');
-      if (c) c.clearRect(0, 0, cv.width, cv.height);
+  /* the palette knife takes the paint back off the surface */
+  wipePaint() {
+    const kn = this.knifeRef.current;
+    if (kn && kn.animate && !document.hidden) {
+      kn.animate([{transform: 'rotate(0deg)'}, {transform: 'rotate(-15deg)', offset: 0.32},
+                  {transform: 'rotate(5deg)', offset: 0.7}, {transform: 'rotate(0deg)'}],
+        {duration: 460, easing: 'ease-in-out'});
     }
+    const cv = this.acrylCanvasRef.current;
+    const c = cv && cv.getContext('2d');
+    if (!c) return;
+    const W = cv.width, H = cv.height;
+    const clear = () => { c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, W, H); c.restore(); };
+    if (this.reduced() || document.hidden) { clear(); return; }
+    const t0 = performance.now(), dur = 640;
+    let last = 0;
+    const step = now => {
+      const k = Math.min(1, (now - t0) / dur);
+      const e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      const x = e * W;
+      c.save();
+      c.setTransform(1, 0, 0, 1, 0, 0);
+      c.globalCompositeOperation = 'destination-out';
+      c.fillStyle = '#000';
+      c.fillRect(last - 1, 0, x - last + 3, H);
+      c.restore();
+      last = x;
+      if (k < 1) requestAnimationFrame(step); else clear();
+    };
+    requestAnimationFrame(step);
+  }
+  trimWick() {
+    const fl = this.flameRef.current;
+    if (fl && fl.animate && !document.hidden) {
+      fl.animate([{transform: 'scale(1)'}, {transform: 'scale(1.1,.6)', offset: 0.16},
+                  {transform: 'scale(.92,1.55)', offset: 0.5}, {transform: 'scale(1)'}],
+        {duration: 1000, easing: 'ease-in-out'});
+    }
+    if (this._candleFlare) this._candleFlare();
+  }
+  clearRoom(room) {
+    if (room === 'acryl') this.wipePaint();
     if (room === 'textil' && this._snip) this._snip();
     if (room === 'oel' && this._candleOff) this._candleOff();
   }
   toggleEffect(room) {
     this.off[room] = !this.off[room];
     if (this.off[room]) this.clearRoom(room);
+    else if (room === 'oel') this.trimWick();
+    else if (room === 'acryl' && this.acrylPainter) this.autoStroke(this.acrylCanvasRef.current, this.acrylPainter);
     try { localStorage.setItem('vvh-off', JSON.stringify(this.off)); } catch (e) {}
     this.syncEffects();
   }
@@ -550,11 +621,16 @@ class Component extends DCLogic {
       b.setAttribute('aria-pressed', isOff ? 'false' : 'true');
       b.title = isOff ? d.effectOn : d.effectStop;
     });
-    const sc = root.querySelector('[data-scissors]');
-    if (sc) {
-      sc.style.opacity = this.off.textil ? '.35' : '1';
-      sc.style.pointerEvents = this.off.textil ? 'none' : '';
-    }
+    root.querySelectorAll('[data-tool]').forEach(el => {
+      const isOff = !!this.off[el.getAttribute('data-tool')];
+      const st = el.querySelector('[data-strike]');
+      if (st) st.setAttribute('opacity', isOff ? '1' : '0');
+      el.style.opacity = isOff ? '.55' : '1';
+      el.style.borderColor = isOff ? 'rgba(236,229,216,.1)' : 'rgba(236,229,216,.16)';
+      el.setAttribute('aria-pressed', isOff ? 'false' : 'true');
+      el.title = isOff ? d.effectOn : d.effectStop;
+      el.setAttribute('aria-label', el.title);
+    });
   }
   reduced() {
     return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -639,44 +715,44 @@ class Component extends DCLogic {
       setTimeout(() => this.enterPage(page), 60);
     }, () => { this._busy = false; });
   }
+  liftRoom(page) {
+    const root = this.rootRef.current;
+    if (!root || this.reduced() || document.hidden) return;
+    const key = this.roomKey(page);
+    const cards = [...root.querySelectorAll('[data-reveal="' + key + '"]')].filter(el => el.style.opacity !== '0');
+    cards.slice(0, 12).forEach((el, i) => {
+      if (!el.animate) return;
+      el.animate([{opacity: 0.55}, {opacity: 1}],
+        {duration: 700, delay: 50 + i * 60, easing: 'ease-out'});
+    });
+  }
   enterPage(page) {
+    this.liftRoom(page);
     if (page === 'acryl' && this.acrylPainter) this.autoStroke(this.acrylCanvasRef.current, this.acrylPainter);
     if (page === 'textil' && this._texEnter) this._texEnter();
   }
 
-  /* ---------- room-to-room transitions ----------
-     A gallery changes rooms by taking the light down and bringing it up again.
-     Anything louder than that fights the work on the walls, so the material
-     stays where it belongs: in the hand, inside each room. */
+  /* ---------- room-to-room transitions ---------- */
   transition(kind, swap, done) {
+    const mode = this.props.transition || 'aus';
     const host = this.transRef.current;
-    if (!host || this.reduced() || !host.animate) { swap(); done(); return; }
+    if (mode === 'aus' || !host || this.reduced() || !host.animate) {
+      swap();
+      this.liftRoom(this.page);
+      done();
+      return;
+    }
+    if (mode === 'werke') return this.dissolveWorks(host, swap, done);
+
     host.innerHTML = '';
     host.style.display = 'block';
     const veil = document.createElement('div');
-    veil.style.cssText = 'position:absolute;inset:0;opacity:0;'
-      + 'background:radial-gradient(120% 90% at 50% 42%, #14100b 0%, #0c0a08 62%)';
+    veil.style.cssText = 'position:absolute;inset:0;opacity:0;background:#0a0806';
     host.appendChild(veil);
 
-    const DOWN = 300, HOLD = 90, UP = 470;
-    let swapped = false, finished = false;
-    veil.animate([{opacity: 0}, {opacity: 1}],
-      {duration: DOWN, easing: 'cubic-bezier(.4,0,.9,1)', fill: 'both'});
-
-    /* the swap and the finish hang on timers, never on animation frames —
-       a backgrounded tab must not be able to strand the reader mid-change */
-    const doSwap = () => {
-      if (swapped) return;
-      swapped = true;
-      try { swap(); } catch (e) { console.warn(e); }
-      veil.animate([{opacity: 1}, {opacity: 0}],
-        {duration: UP, delay: HOLD, easing: 'cubic-bezier(.2,.7,.3,1)', fill: 'both'});
-      const el = this.pageEls()[this.page];
-      if (el && el.animate) {
-        el.animate([{opacity: 0, transform: 'translateY(16px)'}, {opacity: 1, transform: 'none'}],
-          {duration: 640, delay: HOLD - 20, easing: 'cubic-bezier(.2,.85,.2,1)'});
-      }
-    };
+    const quick = mode === 'überblenden';
+    const DOWN = quick ? 170 : 300, HOLD = quick ? 30 : 90, UP = quick ? 230 : 470;
+    let finished = false;
     const finish = () => {
       if (finished) return;
       finished = true;
@@ -684,8 +760,77 @@ class Component extends DCLogic {
       host.innerHTML = '';
       done();
     };
-    setTimeout(doSwap, DOWN + 20);
-    setTimeout(finish, DOWN + HOLD + UP + 60);
+    veil.animate([{opacity: 0}, {opacity: quick ? 0.92 : 1}],
+      {duration: DOWN, easing: 'cubic-bezier(.4,0,.9,1)', fill: 'both'});
+    setTimeout(() => {
+      try { swap(); } catch (e) { console.warn(e); }
+      veil.animate([{opacity: quick ? 0.92 : 1}, {opacity: 0}],
+        {duration: UP, easing: 'cubic-bezier(.22,.72,.28,1)', fill: 'both'});
+      this.liftRoom(this.page);
+    }, DOWN + HOLD);
+    setTimeout(finish, DOWN + HOLD + UP + 70);
+  }
+
+  /* The wall does not go dark and it does not slide: each work on it slowly turns into
+     the work that hangs there in the next room. The old picture stays over the new one
+     and thins out, slot by slot across the wall, so the change is something you watch
+     happen rather than something that covers it. */
+  dissolveWorks(host, swap, done) {
+    const root = this.rootRef.current;
+    const grab = key => [...(root ? root.querySelectorAll('[data-reveal="' + key + '"] img') : [])]
+      .map(im => ({src: im.currentSrc || im.src, r: im.getBoundingClientRect()}))
+      .filter(o => o.src && o.r.width > 4 && o.r.bottom > -200 && o.r.top < window.innerHeight + 200);
+    const old = grab(this.roomKey(this.page));
+
+    host.innerHTML = '';
+    host.style.display = 'block';
+    try { swap(); } catch (e) { console.warn(e); }
+
+    const sec = this.pageEls()[this.page];
+    const fresh = [...(root ? root.querySelectorAll('[data-reveal="' + this.roomKey(this.page) + '"]') : [])];
+    fresh.forEach(el => {                    // the new wall must be lit for the dissolve to read
+      el.style.animation = '';
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+
+    const FADE = 980, STEP = 62;
+    let finished = false;
+    const finish = () => {
+      if (finished) return;
+      finished = true;
+      host.style.display = 'none';
+      host.innerHTML = '';
+      done();
+    };
+
+    if (!old.length) {
+      if (sec && sec.animate) sec.animate([{opacity: 0}, {opacity: 1}], {duration: 520, easing: 'ease-out'});
+      setTimeout(finish, 560);
+      return;
+    }
+
+    /* the section's own text changes under the pictures, so it is eased rather than cut */
+    if (sec && sec.animate) sec.animate([{opacity: .25}, {opacity: 1}], {duration: 620, easing: 'ease-out'});
+
+    let last = 0;
+    old.forEach((o, i) => {
+      const ghost = document.createElement('img');
+      ghost.src = o.src;
+      ghost.alt = '';
+      ghost.style.cssText = 'position:absolute;left:' + o.r.left.toFixed(1) + 'px;top:' + o.r.top.toFixed(1) + 'px;'
+        + 'width:' + o.r.width.toFixed(1) + 'px;height:' + o.r.height.toFixed(1) + 'px;'
+        + 'object-fit:contain;border-radius:14px;will-change:opacity,filter';
+      host.appendChild(ghost);
+      const delay = i * STEP;
+      last = Math.max(last, delay + FADE);
+      ghost.animate([
+        {opacity: 1, filter: 'brightness(1)'},
+        {opacity: .55, filter: 'brightness(.86)', offset: .55},
+        {opacity: 0, filter: 'brightness(.7)'}
+      ], {duration: FADE, delay: delay, easing: 'cubic-bezier(.4,.05,.5,1)', fill: 'both'});
+    });
+    setTimeout(finish, last + 90);
   }
 
   componentDidMount() {
@@ -725,7 +870,11 @@ class Component extends DCLogic {
     this.setState({consent: c, askConsent: !c});
     this.onPop = () => this.readHash();
     window.addEventListener('popstate', this.onPop);
-    this.cleanups.push(() => window.removeEventListener('popstate', this.onPop));
+    window.addEventListener('hashchange', this.onPop);
+    this.cleanups.push(() => {
+      window.removeEventListener('popstate', this.onPop);
+      window.removeEventListener('hashchange', this.onPop);
+    });
     this.onVis = () => { if (document.visibilityState === 'visible') { this.bootstrap(); this.runIntros(); } };
     document.addEventListener('visibilitychange', this.onVis);
     this.cleanups.push(() => document.removeEventListener('visibilitychange', this.onVis));
@@ -733,6 +882,7 @@ class Component extends DCLogic {
     this.syncLang();
   }
   componentDidUpdate(_, prev) {
+    this.showDetailImg();
     this.bootstrap();
     if (this.state.works.length && !this._worksReady) {
       this._worksReady = true;
@@ -1066,6 +1216,18 @@ class Component extends DCLogic {
     };
     const leave = () => { on = false; glow.style.opacity = '0'; cancelAnimationFrame(raf); };
     this._candleOff = leave;
+
+    /* trimming the wick: a taller flame, and the room is briefly legible end to end */
+    const wash = document.createElement('div');
+    wash.setAttribute('aria-hidden', 'true');
+    wash.style.cssText = 'position:absolute;inset:0;pointer-events:none;opacity:0;mix-blend-mode:screen;'
+      + 'background:radial-gradient(120% 78% at 50% 36%,rgba(226,170,104,.26) 0%,rgba(198,113,57,.12) 46%,rgba(0,0,0,0) 78%)';
+    sec.insertBefore(wash, sec.firstChild);
+    this._candleFlare = () => {
+      if (this.off.oel || !wash.animate || document.hidden) return;
+      wash.animate([{opacity: 0}, {opacity: 1, offset: 0.16}, {opacity: 0.8, offset: 0.55}, {opacity: 0}],
+        {duration: 1600, easing: 'ease-out'});
+    };
     sec.addEventListener('pointermove', move, {passive: true});
     sec.addEventListener('pointerleave', leave);
     this._oilMove = move;
@@ -1453,8 +1615,8 @@ class Component extends DCLogic {
     // hover life
     root.querySelectorAll('[data-reveal]:not([data-reveal="sig"]) img').forEach(img => {
       const p = img.closest('[data-reveal]');
-      p.addEventListener('pointerenter', () => { img.style.transform = 'scale(1.045)'; });
-      p.addEventListener('pointerleave', () => { img.style.transform = 'none'; });
+      p.addEventListener('pointerenter', () => { img.style.filter = 'brightness(1.09)'; });
+      p.addEventListener('pointerleave', () => { img.style.filter = ''; });
     });
   }
   rig() {
@@ -1502,7 +1664,48 @@ class Component extends DCLogic {
       if (n) { const im = new Image(); im.src = n.img; }
     });
   }
+  /* an old glass on a brass rim: it magnifies what is under it, nothing more */
+  showDetailImg() {
+    const im = this.detailImgRef.current;
+    if (!im) return;
+    const cur = this.state.works.find(w => w.id === this.state.openId);
+    const want = (cur && cur.img) || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+    if (im.getAttribute('src') !== want) im.src = want;
+  }
+  mountLoupe() {
+    this.showDetailImg();
+    const wrap = this.detailImgWrapRef.current;
+    const loupe = this.loupeRef.current, lens = this.lensRef.current;
+    if (!wrap || !loupe || !lens) return;
+    const src = () => { const im = wrap.querySelector('img'); return im && (im.currentSrc || im.src); };
+    const cur = src();
+    if (cur) lens.style.backgroundImage = 'url("' + cur + '")';
+    if (wrap.__loupe) return;
+    wrap.__loupe = true;
+    const D = 92, Z = 1.85;
+    let held = false;
+    const hide = () => { loupe.style.opacity = '0'; };
+    const place = e => {
+      const im = wrap.querySelector('img');
+      if (!im || this.reduced()) return;
+      const r = im.getBoundingClientRect(), wr = wrap.getBoundingClientRect();
+      const px = e.clientX - r.left, py = e.clientY - r.top;
+      if (px < 0 || py < 0 || px > r.width || py > r.height) { hide(); return; }
+      loupe.style.transform = 'translate(' + (e.clientX - wr.left).toFixed(1) + 'px,' + (e.clientY - wr.top).toFixed(1) + 'px)';
+      lens.style.backgroundSize = (r.width * Z).toFixed(1) + 'px ' + (r.height * Z).toFixed(1) + 'px';
+      lens.style.backgroundPosition = (D / 2 - px * Z).toFixed(1) + 'px ' + (D / 2 - py * Z).toFixed(1) + 'px';
+      loupe.style.opacity = '1';
+    };
+    wrap.addEventListener('pointermove', e => { if (e.pointerType === 'mouse' || held) place(e); }, {passive: true});
+    wrap.addEventListener('pointerdown', e => { held = true; place(e); }, {passive: true});
+    wrap.addEventListener('pointerleave', hide);
+    const up = () => { if (held) { held = false; hide(); } };
+    window.addEventListener('pointerup', up);
+    window.addEventListener('pointercancel', up);
+    this.cleanups.push(() => { window.removeEventListener('pointerup', up); window.removeEventListener('pointercancel', up); });
+  }
   zoomIn() {
+    this.mountLoupe();
     const wrap = this.detailImgWrapRef.current, o = this.originRect;
     // resting state is always correct; the zoom is purely additive
     if (!wrap) return;
@@ -1527,7 +1730,7 @@ class Component extends DCLogic {
     this.originRect = null;
     const next = list[(i + dir + list.length) % list.length].id;
     this.pushHash('#werk/' + next, true);
-    this.setState({openId: next});
+    this.setState({openId: next}, () => this.mountLoupe());
   }
 
   view(w) {
@@ -1557,8 +1760,9 @@ class Component extends DCLogic {
       acrylSecRef: this.acrylSecRef, acrylCanvasRef: this.acrylCanvasRef,
       oilSecRef: this.oilSecRef, oilGridRef: this.oilGridRef, oilCanvasRef: this.oilCanvasRef,
       texSecRef: this.texSecRef, texGridRef: this.texGridRef, texCanvasRef: this.texCanvasRef, needleRef: this.needleRef, scissorsRef: this.scissorsRef,
-      snip: () => this._snip && this._snip(),
+
       overlayRef: this.overlayRef, detailImgWrapRef: this.detailImgWrapRef,
+      loupeRef: this.loupeRef, lensRef: this.lensRef, detailImgRef: this.detailImgRef,
       transRef: this.transRef,
       goAcryl: () => this.goTo('acryl'),
       goOil: () => this.goTo('oel'), goTextile: () => this.goTo('textil'),
