@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Veronika Horytska | Ukrainische Künstlerin · Malerei &amp; Textil</title>
 <meta name="description" content="Veronika Horytska – ukrainische zeitgenössische Künstlerin im Rhein-Main-Gebiet (Aschaffenburg, nahe Frankfurt). Malerei, Textilkunst und Objekt, 2023–2026.">
 <meta name="robots" content="noindex, follow">
@@ -73,6 +73,10 @@ a,button{-webkit-tap-highlight-color:transparent}
 @keyframes vvhLamp{0%,100%{opacity:.5}50%{opacity:.78}}
 nav[aria-label="Navigation"]{scrollbar-width:none;-ms-overflow-style:none}
 nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
+@media (max-width:640px){ .vvh-grid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important} }
+:root[data-touch] [data-effect],
+:root[data-touch] [data-tool],
+:root[data-touch] [data-i18n="loupeHint"]{display:none!important}
 </style>
 </helmet>
 <div id="main" ref="{{ rootRef }}" style="position:relative;min-height:100vh;padding-bottom:120px">
@@ -119,17 +123,12 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
     </div>
     <svg viewBox="0 0 600 8" preserveAspectRatio="none" aria-hidden="true" style="width:100%;height:8px;margin:0 0 18px;overflow:visible"><path d="M0 2 H600" stroke="rgba(236,229,216,.2)" stroke-width="1" fill="none"></path><path d="M0 6.5 H600" stroke="rgba(236,229,216,.09)" stroke-width="1" fill="none"></path></svg>
     <p data-i18n="introAcryl" data-dropcap="1" style="max-width:46ch;margin:0 0 30px;font-size:15px;font-weight:400;line-height:1.65;color:#a19786;text-wrap:pretty">Acrylarbeiten als erster Raum: Körper, Fläche und Blick treten in direkten Kontakt.</p>
-    <div style="display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(min(100%,216px),1fr))">
+    <div class="vvh-grid" style="display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(min(100%,216px),1fr))">
       <sc-for list="{{ acryl }}" as="w" hint-placeholder-count="6">
         <button data-reveal="acryl" onClick="{{ w.open }}" style="display:flex;flex-direction:column;gap:12px;padding:0;border:0;background:transparent;text-align:left;cursor:pointer">
           <div style="position:relative;aspect-ratio:1/1.12;border-radius:20px;overflow:hidden;background:#000;border:1px solid rgba(236,229,216,.1)">
             <img src="{{ w.img }}" alt="{{ w.alt }}" loading="{{ w.eager }}" decoding="async" style="width:100%;height:100%;object-fit:contain;display:block;padding:7px;transition:filter .5s ease">
             <sc-if value="{{ w.sold }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:10px;top:10px;padding:5px 11px;border-radius:999px;background:rgba(140,73,26,.92);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#ffe1d0">{{ w.soldLabel }}</span></sc-if>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:4px">
-            <span style="font-family:'IM Fell English','EB Garamond',Georgia,serif;font-size:17px;line-height:1.2">{{ w.title }}</span>
-            <span style="font-size:12px;font-weight:400;color:#a19786">{{ w.line }}</span>
-            <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#d67f48">{{ w.status }}</span>
           </div>
         </button>
       </sc-for>
@@ -153,17 +152,12 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
     </div>
     <svg viewBox="0 0 600 8" preserveAspectRatio="none" aria-hidden="true" style="width:100%;height:8px;margin:0 0 18px;overflow:visible"><path d="M0 2 H600" stroke="rgba(236,229,216,.2)" stroke-width="1" fill="none"></path><path d="M0 6.5 H600" stroke="rgba(236,229,216,.09)" stroke-width="1" fill="none"></path></svg>
     <p data-i18n="introOil" data-dropcap="1" style="max-width:46ch;margin:0 0 30px;font-size:15px;font-weight:400;line-height:1.65;color:#a19786;text-wrap:pretty">Ölmalerei als verdichteter Bildraum: dunkle Szenen, Körper und Erinnerung werden langsamer lesbar.</p>
-    <div ref="{{ oilGridRef }}" style="position:relative;display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(min(100%,216px),1fr))">
+    <div ref="{{ oilGridRef }}" class="vvh-grid" style="position:relative;display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(min(100%,216px),1fr))">
       <sc-for list="{{ oil }}" as="w" hint-placeholder-count="6">
         <button data-reveal="oil" onClick="{{ w.open }}" style="display:flex;flex-direction:column;gap:12px;padding:0;border:0;background:transparent;text-align:left;cursor:pointer">
           <div style="position:relative;aspect-ratio:1/1.12;border-radius:20px;overflow:hidden;background:#000;border:1px solid rgba(236,229,216,.1)">
             <img src="{{ w.img }}" alt="{{ w.alt }}" loading="{{ w.eager }}" decoding="async" style="width:100%;height:100%;object-fit:contain;display:block;padding:7px;transition:filter .7s ease">
             <sc-if value="{{ w.sold }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:10px;top:10px;padding:5px 11px;border-radius:999px;background:rgba(140,73,26,.92);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#ffe1d0">{{ w.soldLabel }}</span></sc-if>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:4px">
-            <span style="font-family:'IM Fell English','EB Garamond',Georgia,serif;font-size:17px;line-height:1.2">{{ w.title }}</span>
-            <span style="font-size:12px;font-weight:400;color:#a19786">{{ w.line }}</span>
-            <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#d67f48">{{ w.status }}</span>
           </div>
         </button>
       </sc-for>
@@ -216,17 +210,12 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
     </div>
     <svg viewBox="0 0 600 8" preserveAspectRatio="none" aria-hidden="true" style="width:100%;height:8px;margin:0 0 18px;overflow:visible"><path d="M0 2 H600" stroke="rgba(236,229,216,.2)" stroke-width="1" fill="none"></path><path d="M0 6.5 H600" stroke="rgba(236,229,216,.09)" stroke-width="1" fill="none"></path></svg>
     <p data-i18n="introTextile" data-dropcap="1" style="max-width:46ch;margin:0 0 30px;font-size:15px;font-weight:400;line-height:1.65;color:#a19786;text-wrap:pretty">Textile Arbeiten erscheinen als Bildträger, Körperhüllen und Objekte mit Spuren von Hand, Material und Gebrauch.</p>
-    <div ref="{{ texGridRef }}" style="display:grid;gap:24px;grid-template-columns:repeat(auto-fill,minmax(min(100%,216px),1fr))">
+    <div ref="{{ texGridRef }}" class="vvh-grid" style="display:grid;gap:24px;grid-template-columns:repeat(auto-fill,minmax(min(100%,216px),1fr))">
       <sc-for list="{{ textile }}" as="w" hint-placeholder-count="6">
         <button data-reveal="textile" data-tex-card="1" onClick="{{ w.open }}" style="position:relative;display:flex;flex-direction:column;gap:12px;padding:0;border:0;background:transparent;text-align:left;cursor:pointer">
           <div style="position:relative;aspect-ratio:1/1.12;border-radius:20px;overflow:hidden;background:#000;border:1px solid rgba(236,229,216,.09)">
             <img src="{{ w.img }}" alt="{{ w.alt }}" loading="{{ w.eager }}" decoding="async" style="width:100%;height:100%;object-fit:contain;display:block;padding:7px;transition:filter .5s ease">
             <sc-if value="{{ w.sold }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:10px;top:10px;padding:5px 11px;border-radius:999px;background:rgba(140,73,26,.92);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#ffe1d0">{{ w.soldLabel }}</span></sc-if>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:4px">
-            <span style="font-family:'IM Fell English','EB Garamond',Georgia,serif;font-size:17px;line-height:1.2">{{ w.title }}</span>
-            <span style="font-size:12px;font-weight:400;color:#a19786">{{ w.line }}</span>
-            <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9aab77">{{ w.status }}</span>
           </div>
         </button>
       </sc-for>
@@ -1136,34 +1125,10 @@ class Component extends DCLogic {
     });
   }
 
-  /* On a phone there is no cursor, so the scroll becomes the hand:
-     the brush, the candle and the needle are carried down the page by the reader. */
+  /* Touch devices get a plainer, effect-free reading of the page (see rig()) -
+     isTouch() is also used to gate the loupe and to pick touch-friendly copy. */
   isTouch() {
     return !(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
-  }
-  setupTouchDrive() {
-    if (!this.isTouch()) return;
-    document.documentElement.setAttribute('data-touch', '');
-    let lastY = null, phase = 0;
-    const drive = () => {
-      const y = this.scrollY();
-      if (lastY === null) { lastY = y; return; }
-      const dy = y - lastY;
-      if (Math.abs(dy) < 3) return;
-      lastY = y;
-      phase += dy * 0.011;
-      const vw = window.innerWidth, vh = window.innerHeight;
-      const ev = {
-        clientX: vw * (0.5 + Math.sin(phase) * 0.33),
-        clientY: vh * (0.46 + Math.cos(phase * 0.73) * 0.17)
-      };
-      if (this.off[this.page]) return;
-      const fn = this.page === 'acryl' ? this._acrylMove
-               : this.page === 'oel' ? this._oilMove
-               : this.page === 'textil' ? this._texMove : null;
-      if (fn) { try { fn(ev); } catch (e) {} }
-    };
-    this.onScroll(drive);
   }
 
   /* swiping the open work moves through the room */
@@ -1611,12 +1576,14 @@ class Component extends DCLogic {
   }
   rig() {
     this.setupReveals();
-    if (this.acrylSecRef.current && this.acrylCanvasRef.current)
-      this.acrylPainter = this.setupPaint(this.acrylSecRef.current, this.acrylCanvasRef.current,
-        {width: 34, room: 'acryl', expose: '_acrylMove', colors: ['#c67139', '#8c491a', '#7a8a5e', '#e8d9b8', '#5c2b16', '#3f4a2e', '#a8461f']});
-    this.setupCandle();
-    this.setupStitching();
-    this.setupTouchDrive();
+    document.documentElement.toggleAttribute('data-touch', this.isTouch());
+    if (!this.isTouch()) {
+      if (this.acrylSecRef.current && this.acrylCanvasRef.current)
+        this.acrylPainter = this.setupPaint(this.acrylSecRef.current, this.acrylCanvasRef.current,
+          {width: 34, room: 'acryl', expose: '_acrylMove', colors: ['#c67139', '#8c491a', '#7a8a5e', '#e8d9b8', '#5c2b16', '#3f4a2e', '#a8461f']});
+      this.setupCandle();
+      this.setupStitching();
+    }
     // first acrylic demo stroke when the room appears
     const sec = this.acrylSecRef.current;
     if (sec) {
@@ -1664,6 +1631,7 @@ class Component extends DCLogic {
   }
   mountLoupe() {
     this.showDetailImg();
+    if (this.isTouch()) return;
     const wrap = this.detailImgWrapRef.current;
     const loupe = this.loupeRef.current, lens = this.lensRef.current;
     if (!wrap || !loupe || !lens) return;
