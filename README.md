@@ -4,8 +4,9 @@ Statische Website, gehostet auf GitHub Pages. Kein Server, keine Datenbank, kein
 
 Zwei Teile:
 
-- **`/` (index.html)** — die interaktive Galerie: Lupe, Finger-Mal-/Näh-Effekte, Sprachumschalter, Lightbox. Läuft clientseitig.
-- **`/de/`, `/en/`, `/uk/`** — statische, ohne JavaScript vollständig lesbare Seiten für Suchmaschinen: Hero, alle Werke als echtes HTML, Über Veronika, Ausstellungen, Kontakt. `/de/` verlinkt zusätzlich jedes Werk auf eine eigene Seite unter `/de/werke/<slug>/`.
+- **`/` (index.html)** — die interaktive Galerie: Lupe, Finger-Mal-/Näh-Effekte, Sprachumschalter, Lightbox. Läuft clientseitig, bewusst `noindex` (kein eigener, ohne JS lesbarer SEO-Inhalt; die Sprachseiten sind die Suchmaschinen-Version).
+- **`/de/`, `/en/`, `/uk/`** — statische, ohne JavaScript vollständig lesbare Seiten für Suchmaschinen: Hero, alle Werke als echtes HTML, Über Veronika, Kontakt. Jedes Werk hat außerdem eine eigene, indexierbare Seite in allen drei Sprachen: `/de/werke/<slug>/`, `/en/works/<slug>/`, `/uk/works/<slug>/` (gleicher Slug in allen drei Sprachen, sauber per hreflang verknüpft).
+- Ein „Ausstellungen"-Abschnitt existiert bewusst (noch) nicht öffentlich — es liegen keine echten Daten vor, ein sichtbarer Platzhalter wäre schlechter als gar keiner. Siehe Kommentar in `content/shells/*.html`.
 
 ## Online stellen (GitHub Pages, kostenlos)
 
@@ -70,8 +71,10 @@ _ds/               Stylesheet des Design-Systems (Organic)
 assets/site.css    Stylesheet der statischen Seiten
 assets/fonts/      lokal gehostete Schriftdateien (kein Google-Fonts-Request mehr)
 de/, en/, uk/      statische, crawlbare Sprachseiten
-de/werke/<slug>/   einzelne Werkseiten (aktuell nur Deutsch)
-de/impressum/, de/datenschutz/   statische Rechtstexte
+de/werke/<slug>/   einzelne Werkseiten, Deutsch
+en/works/<slug>/   einzelne Werkseiten, Englisch
+uk/works/<slug>/   einzelne Werkseiten, Ukrainisch (gleicher Slug wie DE/EN)
+de/impressum/, de/datenschutz/   statische Rechtstexte (nur Deutsch, das ist Absicht)
 content/           Quelle für die statischen Seiten (JSON-Daten, Generator-Skript,
                    Shells, Grid-Fragmente) — wird nicht direkt ausgeliefert, kann
                    aber im Repo bleiben, um die Seiten später neu zu bauen
@@ -109,9 +112,12 @@ in der Datenschutzerklärung entsprechend angepasst werden.
   `BreadcrumbList` auf jeder Werkseite.
 - `sitemap.xml` wird aus `content/works-full.json` generiert (keine Werkseite vergessen,
   wenn neue Werke dazukommen).
-- Bekannte offene Punkte: siehe Abschlussbericht des letzten SEO-Umbaus (Chat-Historie) —
-  u. a. fehlen englische/ukrainische Einzelwerkseiten, Ausstellungen/CV, und Ausbildungs-/
-  Geburtsdaten im „Über Veronika"-Text (bewusst nicht erfunden, als TODO markiert).
+- Jedes Werk hat eine indexierbare Seite in allen drei Sprachen (129 Werkseiten total),
+  mit vollem hreflang-Cluster (de/en/uk/x-default) und self-referencing Canonical.
+- Offene Punkte, die echte Informationen von Veronika brauchen (bewusst nicht erfunden,
+  nur als interner Code-Kommentar markiert, nirgends sichtbar): Impressum-Adresse,
+  Ausbildung/Geburtsdaten, Ausstellungen/CV. Siehe „Rechtliches" unten und
+  Abschlussbericht in der Chat-Historie.
 
 ## Hinweise
 
