@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://disorder119.github.io/veronika-horytska-portfolio/sitemap.xml
+Sitemap: https://veronikahorytska.de/sitemap.xml

@@ -2,7 +2,7 @@
 $root = "C:\Users\joelb\Documents\Projects\veronika-horytska-portfolio"
 $works = Get-Content -Raw -Encoding UTF8 -Path "$root\content\works-full.json" | ConvertFrom-Json
 $dims = Get-Content -Raw -Encoding UTF8 -Path "$root\content\image-dimensions.json" | ConvertFrom-Json
-$base = "https://disorder119.github.io/veronika-horytska-portfolio"
+$base = "https://veronikahorytska.de"
 
 function E($s) { if ($null -eq $s) { return "" }; return $s.ToString().Replace("&","&amp;").Replace("<","&lt;").Replace(">","&gt;").Replace('"',"&quot;") }
 

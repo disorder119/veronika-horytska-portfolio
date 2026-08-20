@@ -1,6 +1,9 @@
 # Veronika Horytska — Website
 
-Statische Website, gehostet auf GitHub Pages. Kein Server, keine Datenbank, keine laufenden Kosten.
+Statische Website, gehostet auf GitHub Pages. Kein Server, keine Datenbank, keine laufenden Kosten
+außer der Domain selbst.
+
+**Live unter:** `veronikahorytska.de` (eigene Domain, siehe „Eigene Domain" unten für den DNS-Stand).
 
 Zwei Teile:
 
@@ -20,9 +23,15 @@ Zwei Teile:
 
 ### Eigene Domain
 
-Wenn eine Domain gekauft ist (ca. 10–20 € pro Jahr):
+**Aktueller Stand:** `veronikahorytska.de` ist gekauft (Porkbun) und als `CNAME`-Datei im Repo
+hinterlegt. Alle Canonical-/hreflang-/OG-/JSON-LD-URLs sowie `sitemap.xml` und `robots.txt` zeigen
+bereits auf diese Domain. Was noch fehlt: die DNS-Einträge unten müssen bei Porkbun tatsächlich
+gesetzt werden, danach in `Settings` → `Pages` die Domain bestätigen und „Enforce HTTPS" aktivieren
+(erscheint erst, sobald DNS erkannt wurde).
 
-1. Im Repository eine Datei `CNAME` anlegen, Inhalt: die Domain, z. B. `veronikahorytska.com`
+Allgemeine Anleitung für eine neue Domain (ca. 10–20 € pro Jahr):
+
+1. Im Repository eine Datei `CNAME` anlegen, Inhalt: die Domain, z. B. `veronikahorytska.de`
 2. Beim Domain-Anbieter diese DNS-Einträge setzen:
    - `A` auf `185.199.108.153`
    - `A` auf `185.199.109.153`
