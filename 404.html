@@ -2,17 +2,29 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<script>
+/* GitHub Pages serves this file (with a 404 status) for any unknown path — used here to give
+   the interactive gallery's rooms real-looking URLs (/acryl, /oel, /textil) on a static host:
+   stash the intended path, then redirect to the real app so it can restore it via history. */
+(function(){
+  var p = location.pathname.replace(/^\/+|\/+$/g, '');
+  if (['acryl', 'oel', 'textil'].indexOf(p) >= 0) {
+    try { sessionStorage.setItem('vvh-path', '/' + p + location.hash); } catch (e) {}
+    location.replace('/');
+  }
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Seite nicht gefunden | Veronika Horytska</title>
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#0c0a08">
 <meta name="color-scheme" content="dark">
-<link rel="icon" href="/veronika-horytska-portfolio/img/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/veronika-horytska-portfolio/assets/site.css">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="/veronika-horytska-portfolio/de/"><img src="/veronika-horytska-portfolio/img/signature.png" alt="VVH"><span class="brand-name">Veronika Horytska</span></a>
+  <a class="brand" href="/de/"><img src="/img/signature.png" alt="VVH"><span class="brand-name">Veronika Horytska</span></a>
 </header>
 <main id="main">
 <div class="wrap">
@@ -21,9 +33,9 @@
     <h1 style="font-size:clamp(24px,5vw,34px)">Diese Seite gibt es nicht (mehr)</h1>
     <p style="color:var(--muted);max-width:50ch">Der Link war vielleicht veraltet, oder die Adresse hat sich geändert. Hier geht es weiter:</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="/veronika-horytska-portfolio/de/">Portfolio (Werke)</a>
-      <a class="btn btn-ghost" href="/veronika-horytska-portfolio/de/#about">Über Veronika</a>
-      <a class="btn btn-ghost" href="/veronika-horytska-portfolio/">Interaktive Galerie</a>
+      <a class="btn btn-primary" href="/de/">Portfolio (Werke)</a>
+      <a class="btn btn-ghost" href="/de/#about">Über Veronika</a>
+      <a class="btn btn-ghost" href="/">Interaktive Galerie</a>
     </div>
   </div>
 </div>

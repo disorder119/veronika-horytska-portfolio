@@ -2,6 +2,10 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<script>
+/* restores the clean room path (/acryl etc.) that 404.html stashed before its redirect, ahead of any app code */
+(function(){try{var p=sessionStorage.getItem('vvh-path');if(p){sessionStorage.removeItem('vvh-path');history.replaceState(null,'',p);}}catch(e){}})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Veronika Horytska | Ukrainische Künstlerin · Malerei &amp; Textil</title>
 <meta name="description" content="Veronika Horytska – ukrainische zeitgenössische Künstlerin im Rhein-Main-Gebiet (Aschaffenburg, nahe Frankfurt). Malerei, Textilkunst und Objekt, 2023–2026.">
@@ -443,7 +447,7 @@ class Component extends DCLogic {
   }
   afterWorks() {
     this.countWorks();
-    this.readHash();
+    this.readRoute();
     this.setTitle();
   }
   bootstrap(tries) {
@@ -632,12 +636,13 @@ class Component extends DCLogic {
   }
 
   /* the URL names the room and the work, so a link can be shared and Back works */
-  pushHash(h, replace) {
-    if (location.hash === h) return;
-    try { history[replace ? 'replaceState' : 'pushState'](null, '', h); }
-    catch (e) { location.hash = h; }
+  pushUrl(url, replace) {
+    if (location.pathname + location.hash === url) return;
+    try { history[replace ? 'replaceState' : 'pushState'](null, '', url); }
+    catch (e) { location.href = url; }
   }
-  readHash() {
+  readRoute() {
+    const path = (location.pathname || '/').replace(/^\/+|\/+$/g, '');
     const h = (location.hash || '').replace(/^#/, '');
     const m = h.match(/^werk\/(.+)$/);
     if (m) {
@@ -651,7 +656,8 @@ class Component extends DCLogic {
       }
     }
     if (this.state.openId) this.setState({openId: null});
-    const page = ['acryl', 'oel', 'textil'].indexOf(h) >= 0 ? h : 'acryl';
+    const page = ['acryl', 'oel', 'textil'].indexOf(path) >= 0 ? path : 'acryl';
+    if (path !== page) this.pushUrl('/' + page, true);
     if (page !== this.page) {
       this.page = page;
       this.applyPage();
@@ -696,7 +702,7 @@ class Component extends DCLogic {
       this.page = page;
       this.applyPage();
       this.toTop();
-      this.pushHash('#' + page);
+      this.pushUrl('/' + page);
       this.setTitle();
       setTimeout(() => this.enterPage(page), 60);
     }, () => { this._busy = false; });
@@ -851,7 +857,7 @@ class Component extends DCLogic {
       const o = JSON.parse(localStorage.getItem('vvh-off') || 'null');
       if (o) this.off = {acryl: !!o.acryl, oel: !!o.oel, textil: !!o.textil, lupe: !!o.lupe};
     } catch (e) {}
-    this.onPop = () => this.readHash();
+    this.onPop = () => this.readRoute();
     window.addEventListener('popstate', this.onPop);
     window.addEventListener('hashchange', this.onPop);
     this.cleanups.push(() => {
@@ -1607,11 +1613,11 @@ class Component extends DCLogic {
     const el = e && e.currentTarget && e.currentTarget.querySelector('img');
     this.originRect = el ? el.getBoundingClientRect() : null;
     this._lastFocus = e && e.currentTarget ? e.currentTarget : null;
-    this.pushHash('#werk/' + id);
+    this.pushUrl('/' + this.page + '#werk/' + id);
     this.setState({openId: id});
   }
   closeWork() {
-    this.pushHash('#' + this.page);
+    this.pushUrl('/' + this.page);
     this.setState({openId: null}, () => {
       if (this._lastFocus && this._lastFocus.focus) { try { this._lastFocus.focus({preventScroll: true}); } catch (e) {} }
       this._lastFocus = null;
@@ -1694,7 +1700,7 @@ class Component extends DCLogic {
     if (i < 0) return;
     this.originRect = null;
     const next = list[(i + dir + list.length) % list.length].id;
-    this.pushHash('#werk/' + next, true);
+    this.pushUrl('/' + this.page + '#werk/' + next, true);
     this.setState({openId: next}, () => this.mountLoupe());
   }
 
