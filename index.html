@@ -669,7 +669,9 @@ class Component extends DCLogic {
     const d = T[this.state.lang];
     const cur = this.state.works.find(w => w.id === this.state.openId);
     const room = d[{acryl: 'roomAcryl', oel: 'roomOil', textil: 'roomTextile'}[this.page]];
-    document.title = (cur ? cur.title + ' — ' : room + ' — ') + 'Veronika Horytska';
+    /* Acryl is the landing room (bare / normalizes to it) — no prefix there, it's the homepage */
+    const prefix = cur ? cur.title + ' — ' : (this.page === 'acryl' ? '' : room + ' — ');
+    document.title = prefix + 'Veronika Horytska';
   }
   countWorks() {
     const root = this.rootRef.current; if (!root) return;
@@ -1619,6 +1621,7 @@ class Component extends DCLogic {
   closeWork() {
     this.pushUrl('/' + this.page);
     this.setState({openId: null}, () => {
+      this.setTitle();
       if (this._lastFocus && this._lastFocus.focus) { try { this._lastFocus.focus({preventScroll: true}); } catch (e) {} }
       this._lastFocus = null;
     });
