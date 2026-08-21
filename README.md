@@ -25,9 +25,11 @@ Zwei Teile:
 
 **Aktueller Stand:** `veronikahorytska.de` ist gekauft (Porkbun) und als `CNAME`-Datei im Repo
 hinterlegt. Alle Canonical-/hreflang-/OG-/JSON-LD-URLs sowie `sitemap.xml` und `robots.txt` zeigen
-bereits auf diese Domain. Was noch fehlt: die DNS-Einträge unten müssen bei Porkbun tatsächlich
-gesetzt werden, danach in `Settings` → `Pages` die Domain bestätigen und „Enforce HTTPS" aktivieren
-(erscheint erst, sobald DNS erkannt wurde).
+bereits auf diese Domain. Die DNS-Einträge (4× `A` auf die GitHub-Pages-IPs, `CNAME` `www` →
+`disorder119.github.io`) sind bei Porkbun gesetzt, GitHub zeigt „DNS check successful". GitHub
+stellt gerade automatisch das HTTPS-Zertifikat aus — „Enforce HTTPS" in `Settings` → `Pages` lässt
+sich erst aktivieren, sobald das Zertifikat da ist (meist innerhalb einer Stunde nach erfolgreichem
+DNS-Check).
 
 Allgemeine Anleitung für eine neue Domain (ca. 10–20 € pro Jahr):
 

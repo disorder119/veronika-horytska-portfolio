@@ -77,6 +77,7 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
 :root[data-touch] [data-effect],
 :root[data-touch] [data-tool],
 :root[data-touch] [data-i18n="loupeHint"]{display:none!important}
+:root[data-touch] [data-tool="lupe"]{display:none!important}
 </style>
 </helmet>
 <div id="main" ref="{{ rootRef }}" style="position:relative;min-height:100vh;padding-bottom:120px">
@@ -298,7 +299,13 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
           </svg>
         </div>
       </div>
-      <span data-i18n="loupeHint" style="align-self:center;margin-top:-12px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#82796a">Lupe über das Bild führen</span>
+      <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-top:-12px">
+        <span data-i18n="loupeHint" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#82796a">Lupe über das Bild führen</span>
+        <button data-tool="lupe" onClick="{{ toggleLoupe }}" data-i18n-title="loupeOff" title="Lupe ein-/ausschalten" aria-label="Lupe ein-/ausschalten" style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid rgba(236,229,216,.16);border-radius:999px;background:transparent;cursor:pointer" style-hover="border-color:rgba(179,161,124,.7);background:rgba(179,161,124,.08)">
+          <svg viewBox="0 0 24 24" aria-hidden="true" style="width:19px;height:19px"><g fill="none" stroke="#b3a17c" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.2" cy="10.2" r="6.6"></circle><path d="M15.1 15.1 L20.5 20.5"></path></g></svg>
+          <svg data-strike="1" viewBox="0 0 44 44" aria-hidden="true" opacity="0" style="position:absolute;left:0;top:0;width:44px;height:44px;pointer-events:none"><path d="M9.5 34.5 L34.5 9.5" fill="none" stroke="#0d0b09" stroke-width="4.8" stroke-linecap="round"></path><path d="M9.5 34.5 L34.5 9.5" fill="none" stroke="#b3a17c" stroke-width="1.7" stroke-linecap="round"></path></svg>
+        </button>
+      </div>
       <div style="display:flex;flex-direction:column;gap:12px">
         <span style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#d67f48">{{ cur.roomLabel }}</span>
         <h2 style="margin:0;font-family:'IM Fell English','EB Garamond',Georgia,serif;font-weight:400;font-size:clamp(30px,7vw,52px);line-height:.98;letter-spacing:.01em">{{ cur.title }}</h2>
@@ -332,7 +339,7 @@ const T = {
     introAcryl:'Acrylarbeiten als erster Raum: Körper, Fläche und Blick treten in direkten Kontakt.',
     introOil:'Ölmalerei als verdichteter Bildraum: dunkle Szenen, Körper und Erinnerung werden langsamer lesbar.',
     introTextile:'Textile Arbeiten erscheinen als Bildträger, Körperhüllen und Objekte mit Spuren von Hand, Material und Gebrauch.',
-    contact:'Kontakt', navStart:'Start', close:'Galerie', priceLabel:'Preis', statusLabel:'Status', cut:'Faden abschneiden', wipe:'Farbe abziehen', flare:'Docht schneiden', loupeHint:'Lupe über das Bild führen',
+    contact:'Kontakt', navStart:'Start', close:'Galerie', priceLabel:'Preis', statusLabel:'Status', cut:'Faden abschneiden', wipe:'Farbe abziehen', flare:'Docht schneiden', loupeHint:'Lupe über das Bild führen', loupeOff:'Lupe ein-/ausschalten',
     works:'Werke', back:'Zurück', imprint:'Impressum', privacy:'Datenschutz',
     effectOff:'Effekt aus', effectStop:'Effekt anhalten', effectOn:'Effekt einschalten',
     h1Sub:'ukrainische Künstlerin · Malerei, Textil & Objekt · Rhein-Main',
@@ -351,7 +358,7 @@ const T = {
     introAcryl:'Acrylic works as the first room: body, surface and gaze come into direct contact.',
     introOil:'Oil painting as a condensed pictorial space: dark scenes, bodies and memory become legible more slowly.',
     introTextile:'Textile works appear as image carriers, body coverings and objects marked by hand, material and use.',
-    contact:'Contact', navStart:'Start', close:'Gallery', priceLabel:'Price', statusLabel:'Status', cut:'Cut the thread', wipe:'Scrape the paint off', flare:'Trim the wick', loupeHint:'move the loupe across the work',
+    contact:'Contact', navStart:'Start', close:'Gallery', priceLabel:'Price', statusLabel:'Status', cut:'Cut the thread', wipe:'Scrape the paint off', flare:'Trim the wick', loupeHint:'move the loupe across the work', loupeOff:'toggle loupe',
     works:'works', back:'Back', imprint:'Imprint', privacy:'Privacy',
     effectOff:'effect off', effectStop:'Stop the effect', effectOn:'Turn the effect on',
     h1Sub:'Ukrainian contemporary artist · painting, textile & object · Rhine-Main, Germany',
@@ -370,7 +377,7 @@ const T = {
     introAcryl:'Акрилові роботи як перша зала: тіло, площина і погляд вступають у прямий контакт.',
     introOil:'Олійний живопис як згущений простір зображення: темні сцени, тіла й пам’ять читаються повільніше.',
     introTextile:'Текстильні роботи постають як носії зображення, оболонки тіла та об’єкти зі слідами руки, матеріалу й ужитку.',
-    contact:'Контакти', navStart:'Початок', close:'Галерея', priceLabel:'Ціна', statusLabel:'Статус', cut:'Обрізати нитку', wipe:'Зняти фарбу', flare:'Підрізати гніт', loupeHint:'проведіть лупою по роботі',
+    contact:'Контакти', navStart:'Початок', close:'Галерея', priceLabel:'Ціна', statusLabel:'Статус', cut:'Обрізати нитку', wipe:'Зняти фарбу', flare:'Підрізати гніт', loupeHint:'проведіть лупою по роботі', loupeOff:'увімкнути або вимкнути лупу',
     works:'робіт', back:'Назад', imprint:'Вихідні дані', privacy:'Конфіденційність',
     effectOff:'ефект вимкнено', effectStop:'Вимкнути ефект', effectOn:'Увімкнути ефект',
     h1Sub:'українська мисткиня · живопис, текстиль і об’єкт · Рейн-Майн, Німеччина',
@@ -387,7 +394,7 @@ const ROOM_DESC = {acryl:'dAcryl', oil:'dOil', textile:'dTextile'};
 
 class Component extends DCLogic {
   state = {works: [], lang: 'de', openId: null, legal: null};
-  off = {acryl: false, oel: false, textil: false};
+  off = {acryl: false, oel: false, textil: false, lupe: false};
   rootRef = React.createRef();
   heroCanvasRef = React.createRef();
   heroRuleRef = React.createRef();
@@ -842,7 +849,7 @@ class Component extends DCLogic {
     } catch (e) {}
     try {
       const o = JSON.parse(localStorage.getItem('vvh-off') || 'null');
-      if (o) this.off = {acryl: !!o.acryl, oel: !!o.oel, textil: !!o.textil};
+      if (o) this.off = {acryl: !!o.acryl, oel: !!o.oel, textil: !!o.textil, lupe: !!o.lupe};
     } catch (e) {}
     this.onPop = () => this.readHash();
     window.addEventListener('popstate', this.onPop);
@@ -1645,7 +1652,7 @@ class Component extends DCLogic {
     const hide = () => { loupe.style.opacity = '0'; };
     const place = e => {
       const im = wrap.querySelector('img');
-      if (!im || this.reduced()) return;
+      if (!im || this.reduced() || this.off.lupe) { hide(); return; }
       const r = im.getBoundingClientRect(), wr = wrap.getBoundingClientRect();
       const px = e.clientX - r.left, py = e.clientY - r.top;
       if (px < 0 || py < 0 || px > r.width || py > r.height) { hide(); return; }
@@ -1743,6 +1750,7 @@ class Component extends DCLogic {
       toggleAcryl: () => this.toggleEffect('acryl'),
       toggleOil: () => this.toggleEffect('oel'),
       toggleTex: () => this.toggleEffect('textil'),
+      toggleLoupe: () => this.toggleEffect('lupe'),
       next: () => this.step(1),
       prev: () => this.step(-1)
     };
