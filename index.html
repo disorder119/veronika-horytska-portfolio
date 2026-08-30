@@ -303,6 +303,15 @@ nav[aria-label="Navigation"]::-webkit-scrollbar{display:none}
           </svg>
         </div>
       </div>
+      <sc-if value="{{ cur.hasGallery }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <sc-for list="{{ cur.thumbs }}" as="t" hint-placeholder-count="3">
+          <button onClick="{{ t.select }}" aria-label="Andere Ansicht zeigen" style="{{ t.style }}">
+            <img src="{{ t.img }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;pointer-events:none">
+          </button>
+        </sc-for>
+      </div>
+      </sc-if>
       <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-top:-12px">
         <span data-i18n="loupeHint" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#82796a">Lupe über das Bild führen</span>
         <button data-tool="lupe" onClick="{{ toggleLoupe }}" data-i18n-title="loupeOff" title="Lupe ein-/ausschalten" aria-label="Lupe ein-/ausschalten" style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid rgba(236,229,216,.16);border-radius:999px;background:transparent;cursor:pointer" style-hover="border-color:rgba(179,161,124,.7);background:rgba(179,161,124,.08)">
@@ -397,7 +406,7 @@ const ROOM_LABEL = {acryl:'roomAcryl', oil:'roomOil', textile:'roomTextile'};
 const ROOM_DESC = {acryl:'dAcryl', oil:'dOil', textile:'dTextile'};
 
 class Component extends DCLogic {
-  state = {works: [], lang: 'de', openId: null, legal: null};
+  state = {works: [], lang: 'de', openId: null, legal: null, imgIndex: 0};
   off = {acryl: false, oel: false, textil: false, lupe: false};
   rootRef = React.createRef();
   heroCanvasRef = React.createRef();
@@ -1616,7 +1625,7 @@ class Component extends DCLogic {
     this.originRect = el ? el.getBoundingClientRect() : null;
     this._lastFocus = e && e.currentTarget ? e.currentTarget : null;
     this.pushUrl('/' + this.page + '#werk/' + id);
-    this.setState({openId: id});
+    this.setState({openId: id, imgIndex: 0});
   }
   closeWork() {
     this.pushUrl('/' + this.page);
@@ -1630,6 +1639,7 @@ class Component extends DCLogic {
   preloadNeighbours() {
     const cur = this.state.works.find(w => w.id === this.state.openId);
     if (!cur) return;
+    (cur.images || []).forEach(src => { const im = new Image(); im.src = src; });
     const list = this.state.works.filter(w => w.room === cur.room);
     const i = list.findIndex(w => w.id === cur.id);
     [1, -1].forEach(d => {
@@ -1642,8 +1652,13 @@ class Component extends DCLogic {
     const im = this.detailImgRef.current;
     if (!im) return;
     const cur = this.state.works.find(w => w.id === this.state.openId);
-    const want = (cur && cur.img) || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+    const gallery = cur ? [cur.img].concat(cur.images || []) : [];
+    const want = gallery[this.state.imgIndex] || gallery[0] || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
     if (im.getAttribute('src') !== want) im.src = want;
+  }
+  selectImg(i) {
+    if (i === this.state.imgIndex) return;
+    this.setState({imgIndex: i}, () => this.mountLoupe());
   }
   mountLoupe() {
     this.showDetailImg();
@@ -1704,7 +1719,7 @@ class Component extends DCLogic {
     this.originRect = null;
     const next = list[(i + dir + list.length) % list.length].id;
     this.pushUrl('/' + this.page + '#werk/' + next, true);
-    this.setState({openId: next}, () => this.mountLoupe());
+    this.setState({openId: next, imgIndex: 0}, () => this.mountLoupe());
   }
 
   view(w, i) {
@@ -1712,6 +1727,8 @@ class Component extends DCLogic {
     const parts = [w.year, w.tech[this.state.lang], w.size].filter(Boolean);
     const lang = this.state.lang === 'ua' ? 'uk' : this.state.lang;
     const own = (w.description && w.description[lang]) || d[ROOM_DESC[w.room]];
+    const gallery = [w.img].concat(w.images || []);
+    const activeIdx = (w.id === this.state.openId) ? Math.min(this.state.imgIndex, gallery.length - 1) : 0;
     return {
       id: w.id, title: w.title, img: w.img,
       alt: (w.alt && w.alt[lang]) || w.title,
@@ -1725,7 +1742,14 @@ class Component extends DCLogic {
       desc: own + (w.sold ? d.dSold : ''),
       inquire: d.inquire,
       mailto: 'mailto:veronikahorytska@icloud.com?subject=' + encodeURIComponent(d.subject + ': ' + w.title),
-      open: (e) => this.open(w.id, e)
+      open: (e) => this.open(w.id, e),
+      hasGallery: gallery.length > 1,
+      thumbs: gallery.map((src, gi) => ({
+        img: src,
+        select: () => this.selectImg(gi),
+        style: 'padding:0;width:56px;height:56px;flex:0 0 auto;border-radius:12px;overflow:hidden;cursor:pointer;background:#000;' +
+          (gi === activeIdx ? 'border:2px solid #d67f48;opacity:1' : 'border:2px solid transparent;opacity:.55')
+      }))
     };
   }
 

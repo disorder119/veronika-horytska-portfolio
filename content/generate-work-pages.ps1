@@ -177,6 +177,13 @@ $jsonLd
         <a href="../$($next.slug)/">$(E($next.title)) &rarr;</a>
       </div>
     </div>
+$(if ($w.images -and $w.images.Count -gt 0) {
+  $extraImgs = ($w.images | ForEach-Object {
+    $ed = $dims.($_.Substring(4))
+    "      <img src=`"${depthPrefix}img/$($_.Substring(4))`" alt=`"`" width=`"$($ed.width)`" height=`"$($ed.height)`" loading=`"lazy`" decoding=`"async`">"
+  }) -join "`n"
+  "    <div class=`"work-detail-more`" aria-hidden=`"true`" style=`"display:flex;gap:10px;flex-wrap:wrap;margin-top:8px`">`n$extraImgs`n    </div>"
+})
   </article>
 </div>
 </main>
@@ -199,4 +206,4 @@ $jsonLd
     }
   }
 }
-Write-Output "Generated $totalCount work pages (43 works x 3 languages)."
+Write-Output "Generated $totalCount work pages ($($works.Count) works x 3 languages)."
