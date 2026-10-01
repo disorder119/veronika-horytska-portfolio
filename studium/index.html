@@ -1,203 +1,23 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="theme-color" content="#0c0a08">
-  <meta name="color-scheme" content="dark">
-  <title>Nika · Studienfinder 2027</title>
-  <meta name="description" content="Persönlicher Studienfinder für Veronika Horytska: Textil, Mode, Kostüm und Freie Kunst in Deutschland.">
-  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../img/signature.png">
-  <link rel="stylesheet" href="../assets/fonts/fonts.css">
-  <link rel="stylesheet" href="./styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0c0a08">
+<title>Studium 2027 · Veronika Horytska</title>
+<style>
+html,body{height:100%;margin:0;background:#0c0a08;color:#ece5d8;font-family:Georgia,serif}main{min-height:100%;display:grid;place-items:center;padding:24px;text-align:center}p{margin:10px 0;color:#a79e91}small{color:#786f64}i{display:inline-block;width:24px;height:24px;border:2px solid #5c5147;border-top-color:#d67f48;border-radius:50%;animation:s .8s linear infinite}@keyframes s{to{transform:rotate(360deg)}}
+</style>
 </head>
-<body>
-  <a class="skip" href="#main">Zum Inhalt</a>
-  <header class="topbar">
-    <a class="brand" href="../" aria-label="Zur Veronika-Horytska-Webseite">
-      <img src="../img/signature.png" alt="VVH">
-      <span>Studienfinder</span>
-    </a>
-    <nav class="topnav" aria-label="Seitennavigation">
-      <a href="#karte">Karte</a>
-      <a href="#programme">Programme</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#plan">Plan</a>
-    </nav>
-    <span class="stamp">Stand 01.10.2026</span>
-  </header>
-
-  <main id="main">
-    <section class="hero wrap">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">VERONIKA HORYTSKA · STUDIUM 2027</p>
-        <h1>Textil zuerst.<br><em>Mode, Kostüm & Kunst</em> als Wege.</h1>
-        <p class="hero-lead">Diese Seite übersetzt das deutsche Bewerbungschaos in einen klaren Plan. Alle Fristen und Anforderungen stammen aus offiziellen Hochschulquellen; die Portfolio-Matches sind eine Einschätzung auf Basis deiner vorhandenen Arbeiten.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#radar">Nächste Fristen</a>
-          <a class="btn ghost" href="#karte">Deutschlandkarte</a>
-        </div>
-        <p class="fineprint">Portfolio-Match ≠ Zulassungswahrscheinlichkeit. Es beschreibt nur, wie gut dein heutiges Portfolio zum Profil des Studiengangs passt.</p>
-      </div>
-      <div class="hero-art reveal" aria-label="Auswahl textiler Arbeiten">
-        <figure class="hero-img hero-img-main"><img src="../img/lituus-i.webp" alt="Textilarbeit Lituus I von Veronika Horytska"></figure>
-        <figure class="hero-img hero-img-a"><img src="../img/skythisches-gold.webp" alt="Textilarbeit Skythisches Gold von Veronika Horytska"></figure>
-        <figure class="hero-img hero-img-b"><img src="../img/pipes.webp" alt="Textilarbeit Pipes von Veronika Horytska"></figure>
-      </div>
-    </section>
-
-    <section id="radar" class="section wrap">
-      <div class="section-head">
-        <div><p class="eyebrow">01 · JETZT WICHTIG</p><h2>Deadline-Radar</h2></div>
-        <p>Automatisch nach dem nächsten Termin sortiert. Rot bedeutet: nicht liegen lassen.</p>
-      </div>
-      <div id="deadlineList" class="deadline-list" aria-live="polite"></div>
-    </section>
-
-    <section id="karte" class="section wrap">
-      <div class="section-head">
-        <div><p class="eyebrow">02 · ORTE</p><h2>Deutschland · anklicken</h2></div>
-        <p>Die Karte ist schematisch. Ein Punkt öffnet alle passenden Programme der Stadt.</p>
-      </div>
-      <div class="map-layout">
-        <div class="map-card">
-          <div class="map-stage" id="mapStage">
-            <svg class="germany" viewBox="0 0 100 112" role="img" aria-label="Schematische Deutschlandkarte">
-              <path d="M42 2 L56 3 L61 8 L72 7 L78 13 L84 14 L84 22 L91 27 L88 34 L93 40 L88 47 L90 55 L83 60 L84 68 L78 73 L73 72 L68 80 L59 84 L54 94 L46 100 L38 98 L34 92 L26 91 L21 84 L15 82 L14 74 L8 68 L10 59 L6 51 L11 44 L12 35 L18 31 L17 23 L25 19 L26 11 L35 9 Z"/>
-            </svg>
-            <div id="mapPins" class="map-pins"></div>
-          </div>
-          <div class="map-legend"><span><i class="dot top"></i> sehr hoher Match</span><span><i class="dot good"></i> hoher Match</span><span><i class="dot art"></i> Kunst-Nebenweg</span></div>
-        </div>
-        <aside class="city-panel" id="cityPanel">
-          <p class="eyebrow">STADT AUSWÄHLEN</p>
-          <h3>Wo willst du schauen?</h3>
-          <p>Klicke auf einen Punkt. Du bekommst Programme, Fristen und direkte offizielle Links.</p>
-          <button class="text-link" id="clearCity" type="button">Alle Städte zeigen</button>
-        </aside>
-      </div>
-    </section>
-
-    <section id="programme" class="section wrap">
-      <div class="section-head program-head">
-        <div><p class="eyebrow">03 · STUDIENGÄNGE</p><h2>Passende Programme</h2></div>
-        <div class="results-count" id="resultsCount"></div>
-      </div>
-      <div class="toolbar" aria-label="Filter">
-        <div class="filter-row" id="filterRow"></div>
-        <label class="sort-label">Sortieren
-          <select id="sortSelect">
-            <option value="fit">Portfolio-Match</option>
-            <option value="deadline">Nächste Frist</option>
-            <option value="distance">Nähe zu Aschaffenburg</option>
-            <option value="city">Stadt A–Z</option>
-          </select>
-        </label>
-      </div>
-      <div id="programGrid" class="program-grid"></div>
-    </section>
-
-    <section id="portfolio" class="section portfolio-section">
-      <div class="wrap">
-        <div class="section-head">
-          <div><p class="eyebrow">04 · DEIN PORTFOLIO</p><h2>Was bereits stark ist — und was noch fehlt</h2></div>
-          <p>Bewertung aus Sicht einer Bewerbung für Textil/Mode/Kostüm, nicht als allgemeine Kunstnote.</p>
-        </div>
-        <div class="portfolio-grid">
-          <article class="strength-card strong">
-            <span class="card-index">STARK</span>
-            <h3>Eigene textile Sprache</h3>
-            <p>Handgenähte Kleidungsstücke, tragbare Objekte, Kopfbedeckungen, handgeformte Knöpfe und Malerei direkt auf Stoff ergeben bereits eine erkennbare Handschrift.</p>
-          </article>
-          <article class="strength-card strong">
-            <span class="card-index">STARK</span>
-            <h3>Kunst + Körper + Material</h3>
-            <p>Die Arbeiten liegen zwischen Kleidung, Objekt und Bild. Das passt besonders gut zu Textilkunst, experimentellem Mode- und Kostümdesign.</p>
-          </article>
-          <article class="strength-card improve">
-            <span class="card-index">ERGÄNZEN</span>
-            <h3>Entwurfsprozess zeigen</h3>
-            <p>Für Mode fehlen noch sichtbare Entwicklungsschritte: Skizzen, Silhouetten-Varianten, Recherche, Materialtests, Fehlversuche, Prototypen und Entscheidungen vom ersten Gedanken bis zum fertigen Teil.</p>
-          </article>
-          <article class="strength-card improve">
-            <span class="card-index">ERGÄNZEN</span>
-            <h3>Schnitt & Konstruktion dokumentieren</h3>
-            <p>Fotografiere Schnittentwicklung, Nähte, Innenverarbeitung, Probeteile/Toiles und technische Zeichnungen. Das macht handwerkliches Können für Kommissionen sofort lesbar.</p>
-          </article>
-          <article class="strength-card improve">
-            <span class="card-index">ERGÄNZEN</span>
-            <h3>Eine Mini-Kollektion entwickeln</h3>
-            <p>3–5 zusammengehörige Looks mit gemeinsamer Idee würden die Brücke von Einzelobjekten zu Modedesign deutlich stärken.</p>
-          </article>
-          <article class="strength-card neutral">
-            <span class="card-index">BONUS</span>
-            <h3>Malerei nicht verstecken</h3>
-            <p>Die Malerei ist kein Umweg: Sie belegt Farbe, Figur, Komposition und eigenständiges Bilddenken. Für Mode/Textil sollte sie aber die textile Arbeit unterstützen, nicht dominieren.</p>
-          </article>
-        </div>
-        <div class="portfolio-strip">
-          <img src="../img/dyki-bizony.webp" alt="Dyki Bizony">
-          <img src="../img/leinenmantel.webp" alt="Leinenmantel">
-          <img src="../img/bronzezeit.webp" alt="Bronzezeit">
-          <img src="../img/pidsvichnyk-kerzenhalter.webp" alt="Pidsvichnyk Kerzenhalter">
-        </div>
-      </div>
-    </section>
-
-    <section id="plan" class="section wrap">
-      <div class="section-head">
-        <div><p class="eyebrow">05 · DEIN PLAN</p><h2>Schritt für Schritt</h2></div>
-        <p>Häkchen werden nur auf diesem Gerät im Browser gespeichert.</p>
-      </div>
-      <div class="plan-layout">
-        <div id="checklist" class="checklist"></div>
-        <aside class="explain-card">
-          <p class="eyebrow">DEUTSCHLAND EINFACH</p>
-          <h3>Die 6 Begriffe, die du kennen musst</h3>
-          <dl class="glossary">
-            <div><dt>Mappe / Portfolio</dt><dd>Deine künstlerischen Arbeiten. Oft ist das die erste Auswahlrunde.</dd></div>
-            <div><dt>Eignungsprüfung</dt><dd>Künstlerische Aufnahmeprüfung. Bestehen bedeutet noch nicht automatisch Immatrikulation.</dd></div>
-            <div><dt>HZB</dt><dd>Hochschulzugangsberechtigung, z. B. Abitur oder ein als gleichwertig anerkannter ausländischer Schulabschluss.</dd></div>
-            <div><dt>VPD / uni-assist</dt><dd>Vorprüfung ausländischer Zeugnisse. Manche Hochschulen verlangen sie zusätzlich und deutlich früher.</dd></div>
-            <div><dt>Vorpraktikum</dt><dd>Praktische Arbeit vor Studienbeginn, z. B. in Schneiderei oder Kostümwerkstatt.</dd></div>
-            <div><dt>Immatrikulation</dt><dd>Die eigentliche Einschreibung nach bestandener künstlerischer Auswahl und formaler Zulassung.</dd></div>
-          </dl>
-        </aside>
-      </div>
-    </section>
-
-    <section id="hilfe" class="section wrap">
-      <div class="section-head">
-        <div><p class="eyebrow">06 · HILFE</p><h2>Mappenberatung & Infotermine</h2></div>
-        <p>Nutze Beratung vor der Abgabe. Das ist bei Kunst- und Designhochschulen normal und sinnvoll.</p>
-      </div>
-      <div id="helpGrid" class="help-grid"></div>
-    </section>
-
-    <section class="section wrap source-note">
-      <div>
-        <p class="eyebrow">DATENQUALITÄT</p>
-        <h2>Vor dem Absenden immer noch einmal klicken.</h2>
-        <p>Fristen können von Hochschulen geändert werden. Diese Seite wurde am <strong>01.10.2026</strong> gegen offizielle Hochschulquellen geprüft. Jede Karte enthält den direkten Quellenlink. Bei widersprüchlichen Angaben wird die aktuellere zentrale Bewerbungsseite bevorzugt.</p>
-      </div>
-      <a class="btn ghost" href="../" target="_blank" rel="noopener">Veronikas Portfolio öffnen</a>
-    </section>
-  </main>
-
-  <footer class="footer wrap">
-    <img src="../img/signature.png" alt="VVH">
-    <div><strong>Veronika Horytska · Studienfinder</strong><br><span>Persönliche Orientierung · keine offizielle Hochschulberatung</span></div>
-    <a href="#main">Nach oben ↑</a>
-  </footer>
-
-  <dialog id="programDialog" class="program-dialog">
-    <button class="dialog-close" type="button" aria-label="Schließen">×</button>
-    <div id="dialogContent"></div>
-  </dialog>
-
-  <script src="./data.js"></script>
-  <script src="./app.js"></script>
-</body>
-</html>
+<body><main id="loading"><div><i aria-hidden="true"></i><p>Studiennavigator wird geladen …</p><small>Veronika Horytska · Studium 2027</small></div></main>
+<script>
+(async()=>{try{
+ const files=Array.from({length:14},(_,i)=>`./bundle/b${String(i).padStart(2,'0')}.txt`);
+ const parts=await Promise.all(files.map(async u=>{const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw new Error(`${u}: ${r.status}`);return r.text()}));
+ const s=parts.join('').replace(/\s/g,''); const bin=atob(s); const bytes=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+ if(!('DecompressionStream' in window))throw new Error('Dieser Browser unterstützt die benötigte Dekomprimierung nicht. Bitte Safari/Chrome/Firefox aktualisieren.');
+ const ds=new DecompressionStream('gzip'); const text=await new Response(new Blob([bytes]).stream().pipeThrough(ds)).text();
+ document.open();document.write(text);document.close();
+}catch(e){console.error(e);document.getElementById('loading').innerHTML=`<div><p>Die Studienseite konnte nicht geladen werden.</p><small>${String(e.message||e)}</small><p><button onclick="location.reload()">Neu laden</button></p></div>`}})();
+</script></body></html>
